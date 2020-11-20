@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "Lobster";
+  src: url(../font/Lobster/Lobster-Regular.ttf);
+}
+@font-face {
+  font-family: "Fira";
+  src: url(../font/Fira_Sans/FiraSans-Regular.ttf);
+}
+@font-face {
+  font-family: "Delius";
+  src: url(../font/Delius/Delius-Regular.ttf);
+}
+body {
+  font-family: Fira;
+}
+
+header {
+  display: flex;
+  background-color: #f3e9f1;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+header img {
+  height: 70px;
+  width: auto;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+header .header_input {
+  display: flex;
+}
+header .header_input_category {
+  font-size: 13px;
+  background: linear-gradient(to top, #f5aa42, #f57e42);
+  padding: 10px;
+  border-radius: 10px 0px 0px 10px;
+  border: 2px outset #f5aa42;
+  color: #131921;
+}
+header .header_input_search input {
+  height: 33px;
+  width: 500px;
+  font-family: Fira;
+  color: #131921;
+  font-size: 15px;
+}
+header .header_input_loupe {
+  font-size: 13px;
+  background: linear-gradient(to top, #f5aa42, #f57e42);
+  padding: 10px;
+  border-radius: 0px 10px 10px 0px;
+  border: 2px outset #f5aa42;
+  color: #131921;
+}
+header .header_cart a {
+  display: flex;
+  align-items: center;
+}
+header .header_cart_icon i {
+  font-size: 30px;
+  margin-right: 10px;
+  color: #131921;
+}
+header .header_cart_number {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f5aa42;
+  position: absolute;
+  right: 113px;
+  top: -6px;
+}
+header .header_cart_text {
+  margin-right: 30px;
+  color: #131921;
+  font-family: Delius;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

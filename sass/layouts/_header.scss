@@ -1,0 +1,71 @@
+@mixin header-style{
+    display: flex;
+    background-color: rgb(243, 233, 241);
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+        & img{
+            height: 70px;
+            width: auto;
+            margin-left: 20px;
+            margin-right: 30px;
+        }
+
+.header_input{
+    display: flex;
+    &_category{
+        font-size: 13px;
+        background: linear-gradient(to top, #f5aa42, #f57e42);
+        padding: 10px;
+        border-radius: 10px 0px 0px 10px;
+        border: 2px outset #f5aa42;
+        color: #131921;
+    }
+    &_search{
+        & input{
+        height: 33px;
+        width: 500px;
+        font-family: Fira;
+        color: #131921;
+        font-size: 15px;
+        }
+    }
+    &_loupe{
+        font-size: 13px;
+        background: linear-gradient(to top, #f5aa42, #f57e42);        padding: 10px;
+        border-radius: 0px 10px 10px 0px;
+        border: 2px outset #f5aa42;
+        color: #131921;
+    }
+}
+.header_cart{
+    & a{
+        display: flex;
+        align-items: center;
+    }
+    &_icon{
+        & i{
+        font-size: 30px;
+        margin-right: 10px;
+        color: #131921;
+        }
+    }
+    &_number{
+        font-size: 22px;
+        font-weight: bold;
+        color: #f5aa42;
+        position: absolute;
+        right: 113px;
+        top: -6px;
+    }
+    &_text{
+        margin-right: 30px;
+        color: #131921;
+        font-family: Delius;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+}
+}
