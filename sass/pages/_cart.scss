@@ -5,3 +5,46 @@ header{
 footer{
     @include footer-style;
 }
+
+.your_cart{
+    margin-left: 20px;
+    font-size: 26px;
+}
+
+.main_cart{
+    display: flex;
+    &_products{
+        width: 70%;
+    }
+    &_form{
+        width: 30%;
+        background-color: rgb(249, 243, 250);
+        border-radius: 15px;
+        padding: 10px 10px 40px 40px;
+        font-size: 14px;
+        margin-right: 20px;
+        &_button input{
+            background-color: #f5aa42;
+            border-radius: 30px;
+            border: none;
+            box-shadow: 1px 2px 5px lightgray;
+            font-family: Fira;
+            font-size: 16px;
+            margin-top: 20px;
+            padding: 20px 25px 20px 25px;
+            cursor: pointer;
+        }
+    }
+    &_products{
+        margin-left: 50px;
+    }
+}
+
+.total_cart{
+    margin: 20px;
+    font-size: 20px;
+    background: #f5aa42;
+    border-radius: 10px;
+    padding: 8px 15px 8px 15px;
+    width: 500px;
+}

@@ -12,6 +12,7 @@
 }
 body {
   font-family: Fira;
+  margin: 0px;
 }
 
 header {
@@ -74,8 +75,8 @@ header .header_cart_number {
   font-weight: bold;
   color: #f5aa42;
   position: absolute;
-  right: 113px;
-  top: -6px;
+  right: 108px;
+  top: -13px;
 }
 header .header_cart_text {
   margin-right: 30px;
@@ -156,6 +157,10 @@ footer .fa-twitter:hover {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
+.container_all_products a {
+  color: black;
+  text-decoration: none;
 }
 .container_product {
   width: 350px;
@@ -238,8 +243,8 @@ header .header_cart_number {
   font-weight: bold;
   color: #f5aa42;
   position: absolute;
-  right: 113px;
-  top: -6px;
+  right: 108px;
+  top: -13px;
 }
 header .header_cart_text {
   margin-right: 30px;
@@ -371,8 +376,8 @@ header .header_cart_number {
   font-weight: bold;
   color: #f5aa42;
   position: absolute;
-  right: 113px;
-  top: -6px;
+  right: 108px;
+  top: -13px;
 }
 header .header_cart_text {
   margin-right: 30px;
@@ -442,6 +447,49 @@ footer .fa-twitter {
 }
 footer .fa-twitter:hover {
   color: #00acee;
+}
+
+.your_cart {
+  margin-left: 20px;
+  font-size: 26px;
+}
+
+.main_cart {
+  display: flex;
+}
+.main_cart_products {
+  width: 70%;
+}
+.main_cart_form {
+  width: 30%;
+  background-color: #f9f3fa;
+  border-radius: 15px;
+  padding: 10px 10px 40px 40px;
+  font-size: 14px;
+  margin-right: 20px;
+}
+.main_cart_form_button input {
+  background-color: #f5aa42;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 1px 2px 5px lightgray;
+  font-family: Fira;
+  font-size: 16px;
+  margin-top: 20px;
+  padding: 20px 25px 20px 25px;
+  cursor: pointer;
+}
+.main_cart_products {
+  margin-left: 50px;
+}
+
+.total_cart {
+  margin: 20px;
+  font-size: 20px;
+  background: #f5aa42;
+  border-radius: 10px;
+  padding: 8px 15px 8px 15px;
+  width: 500px;
 }
 
 footer {

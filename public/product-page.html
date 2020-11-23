@@ -9,37 +9,36 @@
     </head>
     <body>
         <header>
-            <div> <!--Logo-->
-                <img src= img/logo_orinoco.png alt="Logo Orinoco"/>
+            <div class="header_logo"> <!--Logo-->
+                <a href="index.html"><img src= ../img/logo_orinoco.png alt="Logo Orinoco"/></a>
             </div> 
 
-            <div> <!--Barre recherche-->
-                <div> <!--Categorie menu defilant-->
-                    <a>Catégories</a>
-                        <li><a>Meubles</a></li>
-                    </ul>
+            <div class="header_input"> <!--Barre recherche-->
+                <div class="header_input_category"> <!--Categorie menu defilant-->
+                    <a>Catégories</a> <!--Menu deroulant-->
+                    <i class="fas fa-sort-down"></i>
                 </div>
 
-                <div> <!--Barre recehrche-->
+                <div class="header_input_search"> <!--Barre recehrche-->
                     <input>
                 </div>
 
-                <div> <!--Logo loupe-->
+                <div class="header_input_loupe"> <!--Logo loupe-->
                     <i class="fas fa-search"></i>
                 </div> 
             </div> 
 
-            <div> <!--Panier-->
-                <a> <!--Lien vers page panier-->
-                    <div> <!--Icone panier-->
+            <div class="header_cart"> <!--Panier-->
+                <a href="cart-page.html"> <!--Lien vers page panier-->
+                    <div class="header_cart_icon"> <!--Icone panier-->
                         <i class="fas fa-shopping-cart"></i>
                     </div>
 
-                    <div><!--Nombres articles dans panier-->
-                        <p></p>
+                    <div class="header_cart_number"><!--Nombres articles dans panier-->
+                        <p>3</p>
                     </div> 
 
-                    <div> <!--Texte Panier-->
+                    <div class="header_cart_text"> <!--Texte Panier-->
                         <p>Panier</p>
                     </div>
                 </a>
@@ -78,26 +77,31 @@
         </div>
 
         <footer>
-            <div><!--Condition générales-->
-                <a><p>Conditions générales de vente</p></a>
+            <div class="footer_conditions"><!--Condition générales-->
+                <a href="#"><p>Conditions générales de vente</p></a>
             </div> 
             
-            <div><!--Contact-->
-                <a><p>Contact</p></a>
+            <div class="footer_contact"><!--Contact-->
+                <span>Contact</span>
+                <a href="mailto:orinoco@mail.com"><p><i class="fas fa-at"></i> orinoco@mail.com</p></a>
+                <a href="tel:0199989796"><p><i class="fas fa-phone-alt"></i> 01.99.98.97.96</p></a>
             </div> 
 
-            <div> <!--Reseaux sociaux-->
-                <div><!--Insta-->
-                    <i class="fab fa-instagram"></i>
-                </div> 
+            <div class="footer_socials"> <!--Reseaux sociaux-->
+                <span>Suivez nous</span>
+                <div class="footer_socials_icons">
+                    <div><!--Insta-->
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div> 
 
-                <div><!--Fb-->
-                    <i class="fab fa-facebook"></i>
+                    <div><!--Fb-->
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+
+                    <div><!--Twitter-->
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div> 
                 </div>
-
-                <div><!--Twitter-->
-                    <i class="fab fa-twitter"></i>
-                </div> 
             </div> 
         </footer>
     </body>

@@ -1,5 +1,6 @@
 body{
     font-family: Fira;
+    margin: 0px;
 }
 header{
     @include header-style;
@@ -17,6 +18,10 @@ footer{
             display: flex;
             flex-wrap: wrap;
             width: 100%;
+            & a{
+                color: black;
+                text-decoration: none;    
+            }
         }
         &_product{
             width: 350px;
@@ -36,6 +41,6 @@ footer{
                 &_price{
                     margin-left: 10px;
                     font-family: Delius;
-}
+                }
         }
 }
