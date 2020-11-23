@@ -1,0 +1,67 @@
+@mixin footer-style{
+    display: flex;
+    font-size: 13px;
+    background-color: #131921;
+    color: white;
+    padding: 20px 30px 10px 50px;
+    align-items: stretch;
+
+.footer_conditions{
+    margin-right: 200px;
+    & a{
+    text-decoration: none;
+    color: white;
+    }
+    & p{
+        margin-top: 0px;
+    }
+}
+.footer_contact{
+    margin-right: 200px;
+    & p{
+        font-size: 11px;
+    }
+    & a{
+        text-decoration: none;
+        color: white;
+    }
+}
+.footer_socials{
+    &_icons{
+        display: flex;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}
+.fa-instagram{
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    &:hover{
+        display: inline-block;
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration: none;
+    }
+
+}
+.fa-facebook{
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    &:hover{
+        color: #3b5998;
+    }
+
+}
+.fa-twitter{
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    &:hover{
+        color: #00acee;
+    }
+
+}
+}

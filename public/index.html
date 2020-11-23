@@ -11,7 +11,7 @@
     <body>
         <header>
             <div class="header_logo"> <!--Logo-->
-                <img src= ../img/logo_orinoco.png alt="Logo Orinoco"/>
+                <a href="index.html"><img src= ../img/logo_orinoco.png alt="Logo Orinoco"/></a>
             </div> 
 
             <div class="header_input"> <!--Barre recherche-->
@@ -30,7 +30,7 @@
             </div> 
 
             <div class="header_cart"> <!--Panier-->
-                <a> <!--Lien vers page panier-->
+                <a href="cart-page.html"> <!--Lien vers page panier-->
                     <div class="header_cart_icon"> <!--Icone panier-->
                         <i class="fas fa-shopping-cart"></i>
                     </div>
@@ -46,43 +46,79 @@
             </div> 
         </header>
 
-        <div> <!--Container produits-->
-            <div> <!--Produit [i]-->
-                <div><!--Photo produit-->
-                    <img src="" alt=""/>
-                </div> 
+        <div class="container"><!--Container produits-->
+            <div class="container_infos">
+                <p>Dans la catégorie "Meuble"</p>
+            </div>
+            <div class="container_all_products">
+                <div class="container_product"> <!--Produit [i]-->
+                    <div class="container_product_img"><!--Photo produit-->
+                        <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
+                    </div> 
 
-                <div><!--Nom produit-->
-                    <p></p>
-                </div> 
-                
-                <div><!--Prix produit-->
-                    <p></p>
-                </div> 
+                    <div class="container_product_name"><!--Nom produit-->
+                        <p>Meuble en chêne</p>
+                    </div> 
+                    
+                    <div class="container_product_price"><!--Prix produit-->
+                        <p>79,99 €</p>
+                    </div> 
+                </div>
+                <div class="container_product"> <!--Produit [i]-->
+                    <div class="container_product_img"><!--Photo produit-->
+                        <img src="../backend/images/oak_3.jpg" alt="Meuble 3"/>
+                    </div> 
+
+                    <div class="container_product_name"><!--Nom produit-->
+                        <p>Meuble en bois</p>
+                    </div> 
+                    
+                    <div class="container_product_price"><!--Prix produit-->
+                        <p>109,99 €</p>
+                    </div> 
+                </div>
+                <div class="container_product"> <!--Produit [i]-->
+                    <div class="container_product_img"><!--Photo produit-->
+                        <img src="../backend/images/oak_4.jpg" alt="Meuble 4"/>
+                    </div> 
+
+                    <div class="container_product_name"><!--Nom produit-->
+                        <p>Meuble en or</p>
+                    </div> 
+                    
+                    <div class="container_product_price"><!--Prix produit-->
+                        <p>179,99 €</p>
+                    </div> 
+                </div>
             </div>
         </div>
 
         <footer>
-            <div><!--Condition générales-->
-                <a><p>Conditions générales de vente</p></a>
+            <div class="footer_conditions"><!--Condition générales-->
+                <a href="#"><p>Conditions générales de vente</p></a>
             </div> 
             
-            <div><!--Contact-->
-                <a><p>Contact</p></a>
+            <div class="footer_contact"><!--Contact-->
+                <span>Contact</span>
+                <a href="mailto:orinoco@mail.com"><p><i class="fas fa-at"></i> orinoco@mail.com</p></a>
+                <a href="tel:0199989796"><p><i class="fas fa-phone-alt"></i> 01.99.98.97.96</p></a>
             </div> 
 
-            <div> <!--Reseaux sociaux-->
-                <div><!--Insta-->
-                    <i class="fab fa-instagram"></i>
-                </div> 
+            <div class="footer_socials"> <!--Reseaux sociaux-->
+                <span>Suivez nous</span>
+                <div class="footer_socials_icons">
+                    <div><!--Insta-->
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div> 
 
-                <div><!--Fb-->
-                    <i class="fab fa-facebook"></i>
+                    <div><!--Fb-->
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+
+                    <div><!--Twitter-->
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div> 
                 </div>
-
-                <div><!--Twitter-->
-                    <i class="fab fa-twitter"></i>
-                </div> 
             </div> 
         </footer>
     </body>

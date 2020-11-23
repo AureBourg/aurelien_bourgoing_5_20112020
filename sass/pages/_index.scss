@@ -4,3 +4,38 @@ body{
 header{
     @include header-style;
 }
+
+footer{
+    @include footer-style;
+}
+
+.container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+        &_all_products{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        &_product{
+            width: 350px;
+            height: 300px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 1px 3px 5px lightgrey;
+                &_img img{
+                    width: 350px;
+                    height: 200px;
+                    border-radius: 15px 15px 0px 0px;
+                }
+                &_name{
+                    margin-left: 10px;
+                    font-weight: bold;
+                }
+                &_price{
+                    margin-left: 10px;
+                    font-family: Delius;
+}
+        }
+}
