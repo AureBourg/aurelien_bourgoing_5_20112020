@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/OpenClassrooms-Student-Center/JWDP5/issues"
   },
-  "homepage": "https://github.com/OpenClassrooms-Student-Center/JWDP5#readme"
+  "homepage": "https://github.com/OpenClassrooms-Student-Center/JWDP5#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  }
 }

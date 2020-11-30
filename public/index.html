@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+
         <link rel="stylesheet" href="style.css">
-        <title>Orinoco</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
         <script src="https://kit.fontawesome.com/bebc52df70.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+
+        <title>Orinoco</title>
+
     </head>
 
     <body>
-        <header>
-            <div class="header_logo"> <!--Logo-->
-                <a href="index.html"><img src= ../img/logo_orinoco.png alt="Logo Orinoco"/></a>
+        <header class="row">
+            <div class="header_logo col-5 col-sm-3"> <!--Logo-->
+                <a href="index.html">
+                    <img src= ../img/logo_orinoco.png alt="Logo Orinoco"/>
+                </a>
             </div> 
 
-            <div class="header_input"> <!--Barre recherche-->
-                <div class="header_input_category"> <!--Categorie menu defilant-->
-                    <a>Catégories</a> <!--Menu deroulant-->
+            <div class="header_input col"> <!--Barre recherche-->
+                <div class="header_input_category d-none d-sm-block"> <!--Categorie menu defilant-->
+                    Catégories <!--Menu deroulant-->
                     <i class="fas fa-sort-down"></i>
                 </div>
 
-                <div class="header_input_search"> <!--Barre recehrche-->
-                    <input>
+                <div class="header_input_search d-none d-sm-block"> <!--Barre recehrche-->
+                    <input value="Meuble">
                 </div>
 
                 <div class="header_input_loupe"> <!--Logo loupe-->
@@ -29,84 +39,113 @@
                 </div> 
             </div> 
 
-            <div class="header_cart"> <!--Panier-->
-                <a href="cart-page.html"> <!--Lien vers page panier-->
-                    <div class="header_cart_icon"> <!--Icone panier-->
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
+            <div class="col-2">
+                <div class="header_cart"> <!--Panier-->
+                    <a href="cart-page.html"> <!--Lien vers page panier-->
+                        <div class="header_cart_icon"> <!--Icone panier-->
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
 
-                    <div class="header_cart_number"><!--Nombres articles dans panier-->
-                        <p>0</p>
-                    </div> 
+                        <div class="header_cart_number"><!--Nombres articles dans panier-->
+                            <p>0</p>
+                        </div> 
 
-                    <div class="header_cart_text"> <!--Texte Panier-->
-                        <p>Panier</p>
-                    </div>
-                </a>
+                        <div class="header_cart_text d-none d-sm-block"> <!--Texte Panier-->
+                            <p>Panier</p>
+                        </div>
+                    </a>
+                </div>
             </div> 
         </header>
 
-        <div class="container"><!--Container produits-->
-            <div class="container_infos">
+        <div class="block"><!--block produits-->
+            <div class="block_infos row m-4">
                 <p>Dans la catégorie "Meuble"</p>
             </div>
-            <div class="container_all_products">
-                <a href="product-page.html">
-                    <div class="container_product"> <!--Produit [i]-->
-                        <div class="container_product_img"><!--Photo produit-->
-                            <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
-                        </div> 
+            <div class="block_all_products row">
+                <div class="col-12 col-md-4 px-4 py-4">
+                    <a href="product-page.html">
+                        <div class="block_product"> <!--Produit [i]-->
+                            <div class="block_product_img"><!--Photo produit-->
+                                <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
+                            </div> 
 
-                        <div class="container_product_name"><!--Nom produit-->
-                            <p>Meuble en chêne</p>
-                        </div> 
-                        
-                        <div class="container_product_price"><!--Prix produit-->
-                            <p>79,99 €</p>
-                        </div> 
-                    </div>
-                </a>
-                <div class="container_product"> <!--Produit [i]-->
-                    <div class="container_product_img"><!--Photo produit-->
-                        <img src="../backend/images/oak_3.jpg" alt="Meuble 3"/>
-                    </div> 
-
-                    <div class="container_product_name"><!--Nom produit-->
-                        <p>Meuble en bois</p>
-                    </div> 
-                    
-                    <div class="container_product_price"><!--Prix produit-->
-                        <p>109,99 €</p>
-                    </div> 
+                            <div class="block_product_name"><!--Nom produit-->
+                                <p>Meuble en chêne</p>
+                            </div> 
+                            
+                            <div class="block_product_price"><!--Prix produit-->
+                                <p>79,99 €</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="container_product"> <!--Produit [i]-->
-                    <div class="container_product_img"><!--Photo produit-->
-                        <img src="../backend/images/oak_4.jpg" alt="Meuble 4"/>
-                    </div> 
+                <div class="col-12 col-md-4 px-4 py-4">
+                    <a href="product-page.html">
+                        <div class="block_product"> <!--Produit [i]-->
+                            <div class="block_product_img"><!--Photo produit-->
+                                <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
+                            </div> 
 
-                    <div class="container_product_name"><!--Nom produit-->
-                        <p>Meuble en or</p>
-                    </div> 
-                    
-                    <div class="container_product_price"><!--Prix produit-->
-                        <p>179,99 €</p>
-                    </div> 
+                            <div class="block_product_name"><!--Nom produit-->
+                                <p>Meuble en chêne</p>
+                            </div> 
+                            
+                            <div class="block_product_price"><!--Prix produit-->
+                                <p>79,99 €</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 px-4 py-4">
+                    <a href="product-page.html">
+                        <div class="block_product"> <!--Produit [i]-->
+                            <div class="block_product_img"><!--Photo produit-->
+                                <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
+                            </div> 
+
+                            <div class="block_product_name"><!--Nom produit-->
+                                <p>Meuble en chêne</p>
+                            </div> 
+                            
+                            <div class="block_product_price"><!--Prix produit-->
+                                <p>79,99 €</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 px-4 py-4">
+                    <a href="product-page.html">
+                        <div class="block_product"> <!--Produit [i]-->
+                            <div class="block_product_img"><!--Photo produit-->
+                                <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
+                            </div> 
+
+                            <div class="block_product_name"><!--Nom produit-->
+                                <p>Meuble en chêne</p>
+                            </div> 
+                            
+                            <div class="block_product_price"><!--Prix produit-->
+                                <p>79,99 €</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <footer>
-            <div class="footer_conditions"><!--Condition générales-->
+        <footer class="row">
+            <div class="footer_conditions col-sm-4 col-md-3"><!--Condition générales-->
                 <a href="#"><p>Conditions générales de vente</p></a>
             </div> 
             
-            <div class="footer_contact"><!--Contact-->
+            <div class="footer_contact col-sm-4 col-md-3"><!--Contact-->
                 <span>Contact</span>
                 <a href="mailto:orinoco@mail.com"><p><i class="fas fa-at"></i> orinoco@mail.com</p></a>
                 <a href="tel:0199989796"><p><i class="fas fa-phone-alt"></i> 01.99.98.97.96</p></a>
             </div> 
 
-            <div class="footer_socials"> <!--Reseaux sociaux-->
+            <div class="footer_socials col-sm-4 col-md-3 "> <!--Reseaux sociaux-->
                 <span>Suivez nous</span>
                 <div class="footer_socials_icons">
                     <div><!--Insta-->
