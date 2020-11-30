@@ -8,99 +8,116 @@
         <script src="https://kit.fontawesome.com/bebc52df70.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header>
-            <div class="header_logo"> <!--Logo-->
-                <a href="index.html"><img src= ../img/logo_orinoco.png alt="Logo Orinoco"/></a>
-            </div> 
-
-            <div class="header_input"> <!--Barre recherche-->
-                <div class="header_input_category"> <!--Categorie menu defilant-->
-                    <a>Catégories</a> <!--Menu deroulant-->
-                    <i class="fas fa-sort-down"></i>
-                </div>
-
-                <div class="header_input_search"> <!--Barre recehrche-->
-                    <input>
-                </div>
-
-                <div class="header_input_loupe"> <!--Logo loupe-->
-                    <i class="fas fa-search"></i>
+        <header class="container-fluid">
+            <div class="header_components row">
+                <div class="header_logo col-5 col-sm-3"> <!--Logo-->
+                    <a href="index.html">
+                        <img src= ../img/logo_orinoco.png alt="Logo Orinoco"/>
+                    </a>
                 </div> 
-            </div> 
 
-            <div class="header_cart"> <!--Panier-->
-                <a href="cart-page.html"> <!--Lien vers page panier-->
-                    <div class="header_cart_icon"> <!--Icone panier-->
-                        <i class="fas fa-shopping-cart"></i>
+                <div class="header_input col"> <!--Barre recherche-->
+                    <div class="header_input_category d-none d-sm-block"> <!--Categorie menu defilant-->
+                        Catégories <!--Menu deroulant-->
+                        <i class="fas fa-sort-down"></i>
                     </div>
 
-                    <div class="header_cart_number"><!--Nombres articles dans panier-->
-                        <p>3</p>
+                    <div class="header_input_search d-none d-sm-block"> <!--Barre recehrche-->
+                        <input>
+                    </div>
+
+                    <div class="header_input_loupe"> <!--Logo loupe-->
+                        <i class="fas fa-search"></i>
                     </div> 
+                </div> 
 
-                    <div class="header_cart_text"> <!--Texte Panier-->
-                        <p>Panier</p>
-                    </div>
-                </a>
+                <div class="header_cart col-3"> <!--Panier-->
+                    <a href="cart-page.html"> <!--Lien vers page panier-->
+                        <div class="header_cart_icon"> <!--Icone panier-->
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+
+                        <div class="header_cart_number"><!--Nombres articles dans panier-->
+                            0
+                        </div> 
+
+                        <div class="header_cart_text d-none d-sm-block"> <!--Texte Panier-->
+                            Panier
+                        </div>
+                    </a>
+                </div>
             </div> 
         </header>
 
-        <div> <!--Container produit-->
-            <div> <!--Produit -->
-                <div><!--Photo produit-->
-                    <img src="" alt=""/>
-                </div> 
-
-                <div><!--Nom produit-->
-                    <p></p>
-                </div> 
+        <div class="product_page container-fluid"> <!--Container produit-->
+            <div class="product row"> <!--Produit -->
                 
-                <div><!--Prix produit-->
-                    <p></p>
+                <div class="product_img col-8"><!--Photo produit-->
+                    <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
                 </div> 
-            </div>
 
-            <div> <!--Personnalisation produit-->
-                <p>Couleur :</p>
-                <div>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-
-            <button> <!--Bouton ajouter au panier-->
-                <p>Ajouter au panier</p>
-            </button>
-        </div>
-
-        <footer>
-            <div class="footer_conditions"><!--Condition générales-->
-                <a href="#"><p>Conditions générales de vente</p></a>
-            </div> 
-            
-            <div class="footer_contact"><!--Contact-->
-                <span>Contact</span>
-                <a href="mailto:orinoco@mail.com"><p><i class="fas fa-at"></i> orinoco@mail.com</p></a>
-                <a href="tel:0199989796"><p><i class="fas fa-phone-alt"></i> 01.99.98.97.96</p></a>
-            </div> 
-
-            <div class="footer_socials"> <!--Reseaux sociaux-->
-                <span>Suivez nous</span>
-                <div class="footer_socials_icons">
-                    <div><!--Insta-->
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                <div class="product_infos col-4"><!--Nom produit-->
+                    <div class="product_infos_name">
+                        <p>Meuble en chêne</p>
                     </div> 
-
-                    <div><!--Fb-->
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                
+                    <div class="product_infos_price"><!--Prix produit-->
+                        <p>79.99€</p>
                     </div>
 
-                    <div><!--Twitter-->
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div> 
+                    <div class="product_infos_personalisation"> <!--Personnalisation produit-->
+                        <div class="product_infos_personalisation_title">
+                            <p>Couleur :</p>
+                        </div>
+                        <div>
+                            <input type="radio" id="product_infos_personalisation_color_1" checked>
+                            <label for="product_infos_personalisation_color">Bleu</label>
+                          </div>
+                          
+                          <div>
+                            <input type="radio" id="product_infos_personalisation_color_2">
+                            <label for="product_infos_personalisation_color_2">Rouge</label>
+                          </div>
+                          
+                          <div>
+                            <input type="radio" id="product_infos_personalisation_color_3">
+                            <label for="product_infos_personalisation_color_3">Vert</label>
+                          </div>
+                    </div>
+                    <button class="button_add_to_cart"> <!--Bouton ajouter au panier-->
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="container-fluid">
+            <div class="footer_components row">
+                <div class="footer_conditions col-sm-4 col-md-3"><!--Condition générales-->
+                    <a href="#"><p>Conditions générales de vente</p></a>
+                </div> 
+                
+                <div class="footer_contact col-sm-4 col-md-3"><!--Contact-->
+                    <span>Contact</span>
+                    <a href="mailto:orinoco@mail.com"><p><i class="fas fa-at"></i> orinoco@mail.com</p></a>
+                    <a href="tel:0199989796"><p><i class="fas fa-phone-alt"></i> 01.99.98.97.96</p></a>
+                </div> 
+
+                <div class="footer_socials col-sm-4 col-md-3 "> <!--Reseaux sociaux-->
+                    <span>Suivez nous</span>
+                    <div class="footer_socials_icons">
+                        <div><!--Insta-->
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div> 
+
+                        <div><!--Fb-->
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+
+                        <div><!--Twitter-->
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div> 
+                    </div>
                 </div>
             </div> 
         </footer>

@@ -1,3 +1,44 @@
 footer{
     @include footer-style;
 }
+
+.confirmation{
+    &_icons{
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    &_thanks{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    &_order{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        &_number{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &_price{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-left: gray solid 1px;
+        }
+    }
+    &_email{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    &_button{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}

@@ -5,3 +5,36 @@ header{
 footer{
     @include footer-style;
 }
+
+.product{
+    &_page{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    &_img{
+        & img{
+        width: 800px;
+        height: auto;
+        }
+    }
+    &_infos{
+        &_name{
+            font-size: 25px;
+        }
+        &_price{
+            font-size: 30px;
+            font-family: Delius;
+        }
+        &_personalisation{
+            & li{
+            list-style: none;
+            }
+        }
+        & button{
+            border-radius: 20px;
+            border: none;
+            background-color: #f5aa42;
+            padding: 10px 20px 10px 20px;
+        }
+    }
+}

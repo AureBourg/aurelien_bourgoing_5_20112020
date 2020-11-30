@@ -1,5 +1,9 @@
+html{
+    width: 100%;
+}
 body{
     font-family: Fira;
+    width: 100%;
 }
 header{
     @include header-style;
@@ -11,8 +15,9 @@ footer{
 
 .block{
     font-family: Fira;
-    width: 95%;
-    margin: auto;
+        &_infos{
+            padding: 20px;
+        }
         &_all_products{
             display: flex;
             flex-wrap: wrap;

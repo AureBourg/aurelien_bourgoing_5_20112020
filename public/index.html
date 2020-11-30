@@ -17,53 +17,53 @@
     </head>
 
     <body>
-        <header class="row">
-            <div class="header_logo col-5 col-sm-3"> <!--Logo-->
-                <a href="index.html">
-                    <img src= ../img/logo_orinoco.png alt="Logo Orinoco"/>
-                </a>
-            </div> 
-
-            <div class="header_input col"> <!--Barre recherche-->
-                <div class="header_input_category d-none d-sm-block"> <!--Categorie menu defilant-->
-                    Catégories <!--Menu deroulant-->
-                    <i class="fas fa-sort-down"></i>
-                </div>
-
-                <div class="header_input_search d-none d-sm-block"> <!--Barre recehrche-->
-                    <input value="Meuble">
-                </div>
-
-                <div class="header_input_loupe"> <!--Logo loupe-->
-                    <i class="fas fa-search"></i>
+        <header class="container-fluid">
+            <div class="header_components row">
+                <div class="header_logo col-5 col-sm-3"> <!--Logo-->
+                    <a href="index.html">
+                        <img src= ../img/logo_orinoco.png alt="Logo Orinoco"/>
+                    </a>
                 </div> 
-            </div> 
 
-            <div class="col-2">
-                <div class="header_cart"> <!--Panier-->
+                <div class="header_input col"> <!--Barre recherche-->
+                    <div class="header_input_category d-none d-sm-block"> <!--Categorie menu defilant-->
+                        Catégories <!--Menu deroulant-->
+                        <i class="fas fa-sort-down"></i>
+                    </div>
+
+                    <div class="header_input_search d-none d-sm-block"> <!--Barre recehrche-->
+                        <input value="Meuble">
+                    </div>
+
+                    <div class="header_input_loupe"> <!--Logo loupe-->
+                        <i class="fas fa-search"></i>
+                    </div> 
+                </div> 
+
+                <div class="header_cart col-3"> <!--Panier-->
                     <a href="cart-page.html"> <!--Lien vers page panier-->
                         <div class="header_cart_icon"> <!--Icone panier-->
                             <i class="fas fa-shopping-cart"></i>
                         </div>
 
                         <div class="header_cart_number"><!--Nombres articles dans panier-->
-                            <p>0</p>
+                            0
                         </div> 
 
                         <div class="header_cart_text d-none d-sm-block"> <!--Texte Panier-->
-                            <p>Panier</p>
+                            Panier
                         </div>
                     </a>
                 </div>
             </div> 
         </header>
 
-        <div class="block"><!--block produits-->
-            <div class="block_infos row m-4">
-                <p>Dans la catégorie "Meuble"</p>
+        <div class="block container-fluid"><!--block produits-->
+            <div class="block_infos row">
+                Pour la recherche : "Meuble"
             </div>
             <div class="block_all_products row">
-                <div class="col-12 col-md-4 px-4 py-4">
+                <div class="col-10 col-md-4">
                     <a href="product-page.html">
                         <div class="block_product"> <!--Produit [i]-->
                             <div class="block_product_img"><!--Photo produit-->
@@ -80,7 +80,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-4 px-4 py-4">
+                <div class="col-10 col-md-4">
                     <a href="product-page.html">
                         <div class="block_product"> <!--Produit [i]-->
                             <div class="block_product_img"><!--Photo produit-->
@@ -97,7 +97,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-4 px-4 py-4">
+                <div class="col-10 col-md-4">
                     <a href="product-page.html">
                         <div class="block_product"> <!--Produit [i]-->
                             <div class="block_product_img"><!--Photo produit-->
@@ -114,7 +114,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-4 px-4 py-4">
+                <div class="col-10 col-md-4">
                     <a href="product-page.html">
                         <div class="block_product"> <!--Produit [i]-->
                             <div class="block_product_img"><!--Photo produit-->
@@ -134,31 +134,33 @@
             </div>
         </div>
 
-        <footer class="row">
-            <div class="footer_conditions col-sm-4 col-md-3"><!--Condition générales-->
-                <a href="#"><p>Conditions générales de vente</p></a>
-            </div> 
-            
-            <div class="footer_contact col-sm-4 col-md-3"><!--Contact-->
-                <span>Contact</span>
-                <a href="mailto:orinoco@mail.com"><p><i class="fas fa-at"></i> orinoco@mail.com</p></a>
-                <a href="tel:0199989796"><p><i class="fas fa-phone-alt"></i> 01.99.98.97.96</p></a>
-            </div> 
+        <footer class="container-fluid">
+            <div class="footer_components row">
+                <div class="footer_conditions col-sm-4 col-md-3"><!--Condition générales-->
+                    <a href="#"><p>Conditions générales de vente</p></a>
+                </div> 
+                
+                <div class="footer_contact col-sm-4 col-md-3"><!--Contact-->
+                    <span>Contact</span>
+                    <a href="mailto:orinoco@mail.com"><p><i class="fas fa-at"></i> orinoco@mail.com</p></a>
+                    <a href="tel:0199989796"><p><i class="fas fa-phone-alt"></i> 01.99.98.97.96</p></a>
+                </div> 
 
-            <div class="footer_socials col-sm-4 col-md-3 "> <!--Reseaux sociaux-->
-                <span>Suivez nous</span>
-                <div class="footer_socials_icons">
-                    <div><!--Insta-->
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div> 
+                <div class="footer_socials col-sm-4 col-md-3 "> <!--Reseaux sociaux-->
+                    <span>Suivez nous</span>
+                    <div class="footer_socials_icons">
+                        <div><!--Insta-->
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div> 
 
-                    <div><!--Fb-->
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <div><!--Fb-->
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+
+                        <div><!--Twitter-->
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div> 
                     </div>
-
-                    <div><!--Twitter-->
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div> 
                 </div>
             </div> 
         </footer>

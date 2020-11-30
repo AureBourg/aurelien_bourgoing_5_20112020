@@ -568,8 +568,8 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .no-gutters {
@@ -9908,30 +9908,36 @@ h3 {
   font-family: "Delius";
   src: url(../font/Delius/Delius-Regular.ttf);
 }
+html {
+  width: 100%;
+}
+
 body {
   font-family: Fira;
+  width: 100%;
 }
 
 header {
   background-color: #f3e9f1;
   align-items: center;
-  height: 100px;
 }
 header .header_logo {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 header .header_logo a {
   display: inline-block;
 }
 header .header_logo img {
   height: auto;
-  width: 170px;
+  width: 150px;
   max-width: 200px;
 }
 header .header_input {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 header .header_input_category {
   font-size: 13px;
@@ -9957,10 +9963,16 @@ header .header_input_loupe {
   border-radius: 0px 10px 10px 0px;
   color: #131921;
 }
+header .header_cart {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
 header .header_cart a {
   display: flex;
   align-items: center;
   text-decoration: none;
+  justify-content: center;
 }
 header .header_cart_icon i {
   font-size: 30px;
@@ -9971,9 +9983,6 @@ header .header_cart_number {
   font-size: 22px;
   font-weight: bold;
   color: #f5aa42;
-  position: relative;
-  right: 31px;
-  bottom: 16px;
 }
 header .header_cart_text {
   color: #131921;
@@ -10042,8 +10051,9 @@ footer .fa-twitter:hover {
 
 .block {
   font-family: Fira;
-  width: 95%;
-  margin: auto;
+}
+.block_infos {
+  padding: 20px;
 }
 .block_all_products {
   display: flex;
@@ -10078,23 +10088,24 @@ footer .fa-twitter:hover {
 header {
   background-color: #f3e9f1;
   align-items: center;
-  height: 100px;
 }
 header .header_logo {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 header .header_logo a {
   display: inline-block;
 }
 header .header_logo img {
   height: auto;
-  width: 170px;
+  width: 150px;
   max-width: 200px;
 }
 header .header_input {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 header .header_input_category {
   font-size: 13px;
@@ -10120,10 +10131,16 @@ header .header_input_loupe {
   border-radius: 0px 10px 10px 0px;
   color: #131921;
 }
+header .header_cart {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
 header .header_cart a {
   display: flex;
   align-items: center;
   text-decoration: none;
+  justify-content: center;
 }
 header .header_cart_icon i {
   font-size: 30px;
@@ -10134,9 +10151,6 @@ header .header_cart_number {
   font-size: 22px;
   font-weight: bold;
   color: #f5aa42;
-  position: relative;
-  right: 31px;
-  bottom: 16px;
 }
 header .header_cart_text {
   color: #131921;
@@ -10201,28 +10215,54 @@ footer .fa-twitter {
 }
 footer .fa-twitter:hover {
   color: #00acee;
+}
+
+.product_page {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.product_img img {
+  width: 800px;
+  height: auto;
+}
+.product_infos_name {
+  font-size: 25px;
+}
+.product_infos_price {
+  font-size: 30px;
+  font-family: Delius;
+}
+.product_infos_personalisation li {
+  list-style: none;
+}
+.product_infos button {
+  border-radius: 20px;
+  border: none;
+  background-color: #f5aa42;
+  padding: 10px 20px 10px 20px;
 }
 
 header {
   background-color: #f3e9f1;
   align-items: center;
-  height: 100px;
 }
 header .header_logo {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 header .header_logo a {
   display: inline-block;
 }
 header .header_logo img {
   height: auto;
-  width: 170px;
+  width: 150px;
   max-width: 200px;
 }
 header .header_input {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 header .header_input_category {
   font-size: 13px;
@@ -10248,10 +10288,16 @@ header .header_input_loupe {
   border-radius: 0px 10px 10px 0px;
   color: #131921;
 }
+header .header_cart {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
 header .header_cart a {
   display: flex;
   align-items: center;
   text-decoration: none;
+  justify-content: center;
 }
 header .header_cart_icon i {
   font-size: 30px;
@@ -10262,9 +10308,6 @@ header .header_cart_number {
   font-size: 22px;
   font-weight: bold;
   color: #f5aa42;
-  position: relative;
-  right: 31px;
-  bottom: 16px;
 }
 header .header_cart_text {
   color: #131921;
@@ -10331,24 +10374,23 @@ footer .fa-twitter:hover {
   color: #00acee;
 }
 
+.cart_page {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .your_cart {
-  margin-left: 20px;
   font-size: 26px;
 }
 
 .main_cart {
   display: flex;
 }
-.main_cart_products {
-  width: 70%;
-}
 .main_cart_form {
-  width: 30%;
   background-color: #f9f3fa;
   border-radius: 15px;
-  padding: 10px 10px 40px 40px;
+  padding: 40px;
   font-size: 14px;
-  margin-right: 20px;
 }
 .main_cart_form_button input {
   background-color: #f5aa42;
@@ -10360,13 +10402,22 @@ footer .fa-twitter:hover {
   margin-top: 20px;
   padding: 20px 25px 20px 25px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
-.main_cart_products {
-  margin-left: 50px;
+
+.cart_product {
+  display: flex;
+  border: solid 1px grey;
+  margin-bottom: 15px;
+}
+.cart_product img {
+  width: 200px;
 }
 
 .total_cart {
-  margin: 20px;
+  display: flex;
+  align-items: center;
   font-size: 20px;
   background: #f7cb8d;
   border-radius: 10px;
@@ -10430,6 +10481,45 @@ footer .fa-twitter {
 }
 footer .fa-twitter:hover {
   color: #00acee;
+}
+
+.confirmation_icons {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.confirmation_thanks {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.confirmation_order {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.confirmation_order_number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.confirmation_order_price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: gray solid 1px;
+}
+.confirmation_email {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.confirmation_button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

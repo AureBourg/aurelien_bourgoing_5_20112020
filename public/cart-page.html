@@ -8,116 +8,165 @@
         <script src="https://kit.fontawesome.com/bebc52df70.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header>
-            <div class="header_logo"> <!--Logo-->
-                <a href="index.html"><img src= ../img/logo_orinoco.png alt="Logo Orinoco"/></a>
-            </div> 
-
-            <div class="header_input"> <!--Barre recherche-->
-                <div class="header_input_category"> <!--Categorie menu defilant-->
-                    <a>Catégories</a> <!--Menu deroulant-->
-                    <i class="fas fa-sort-down"></i>
-                </div>
-
-                <div class="header_input_search"> <!--Barre recehrche-->
-                    <input>
-                </div>
-
-                <div class="header_input_loupe"> <!--Logo loupe-->
-                    <i class="fas fa-search"></i>
+        <header class="container-fluid">
+            <div class="header_components row">
+                <div class="header_logo col-5 col-sm-3"> <!--Logo-->
+                    <a href="index.html">
+                        <img src= ../img/logo_orinoco.png alt="Logo Orinoco"/>
+                    </a>
                 </div> 
-            </div> 
 
-            <div class="header_cart"> <!--Panier-->
-                <a href="cart-page.html"> <!--Lien vers page panier-->
-                    <div class="header_cart_icon"> <!--Icone panier-->
-                        <i class="fas fa-shopping-cart"></i>
+                <div class="header_input col"> <!--Barre recherche-->
+                    <div class="header_input_category d-none d-sm-block"> <!--Categorie menu defilant-->
+                        Catégories <!--Menu deroulant-->
+                        <i class="fas fa-sort-down"></i>
                     </div>
 
-                    <div class="header_cart_number"><!--Nombres articles dans panier-->
-                        <p>3</p>
+                    <div class="header_input_search d-none d-sm-block"> <!--Barre recehrche-->
+                        <input>
+                    </div>
+
+                    <div class="header_input_loupe"> <!--Logo loupe-->
+                        <i class="fas fa-search"></i>
                     </div> 
+                </div> 
 
-                    <div class="header_cart_text"> <!--Texte Panier-->
-                        <p>Panier</p>
-                    </div>
-                </a>
+                <div class="header_cart col-3"> <!--Panier-->
+                    <a href="cart-page.html"> <!--Lien vers page panier-->
+                        <div class="header_cart_icon"> <!--Icone panier-->
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+
+                        <div class="header_cart_number"><!--Nombres articles dans panier-->
+                            0
+                        </div> 
+
+                        <div class="header_cart_text d-none d-sm-block"> <!--Texte Panier-->
+                            Panier
+                        </div>
+                    </a>
+                </div>
             </div> 
         </header>
 
-        <div class="cart_page">
-            <div class="your_cart">
+        <div class="cart_page container-fluid">
+            <div class="your_cart row">
                 <p>Votre panier</p>
             </div>
 
-            <div class="main_cart">
-                <div class="main_cart_products">
+            <div class="main_cart row">
+                <div class="main_cart_products col-sm-8"> <!--Produits enregistrés dans le panier-->
                     <p>Vous n'avez aucun article dans votre panier.</p>
-                </div> <!--Produits enregistrés dans le panier-->
+                            <div class="cart_product row"> <!--Produit [i]-->
+                                <div class="cart_product_img col"><!--Photo produit-->
+                                    <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
+                                </div> 
+    
+                                <div class="cart_product_name col"><!--Nom produit-->
+                                    <p>Meuble en chêne</p>
+                                </div>
 
-                <aside class="main_cart_form"> <!--Formulaire carte bleu-->
+                                <div class="cart_product_color col"><!--Couleur perso produit-->
+                                    <p>Couleur :</p>
+                                </div> 
+                                
+                                <div class="cart_product_price col"><!--Prix produit-->
+                                    <p>79,99 €</p>
+                                </div>
+                                <label for="product_quantity">Quantité :</label>
+                                <select name="quantity" id="product_quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        <div class="cart_product row"> <!--Produit [i]-->
+                            <div class="cart_product_img col"><!--Photo produit-->
+                                <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
+                            </div> 
+
+                            <div class="cart_product_name col"><!--Nom produit-->
+                                <p>Meuble en chêne</p>
+                            </div> 
+                            
+                            <div class="cart_product_price col"><!--Prix produit-->
+                                <p>79,99 €</p>
+                            </div>
+                        </div>
+                </div> 
+
+                <div class="main_cart_form col-sm-4"> <!--Formulaire carte bleu-->
                     <div>
-                        <p>Nom</p>
+                        Nom
                         <input/>
                     </div>
 
                     <div>
-                        <p>Adresse mail</p>
+                        Adresse
                         <input/>
                     </div>
 
                     <div>
-                        <p>Numéro de carte</p>
+                        Adresse mail
                         <input/>
                     </div>
 
                     <div>
-                        <p>Date d'expiration</p>
+                        Numéro de carte
                         <input/>
                     </div>
 
                     <div>
-                        <p>Cryptogramme</p>
+                        Date d'expiration
+                        <input/>
+                    </div>
+
+                    <div>
+                        Cryptogramme
                         <i class="fas fa-info-circle"></i>
                         <input/>
                     </div>
 
                     <div class="main_cart_form_button">
-                    <a href="order-confirmation-page.html"><input type="submit" value="Passer commande"/></a> <!--Bouton passer commande-->
+                        <a href="order-confirmation-page.html"><input type="submit" value="Passer commande"/></a> <!--Bouton passer commande-->
                     </div>    
-                </aside>
+                </div>
             </div>
 
-            <div class="total_cart"> <!--Sous-total-->
-                <p>Sous-total (0 articles) : </p>
+            <div class="total_cart row"> <!--Sous-total-->
+                Sous-total (0 articles) : 
             </div>
         </div>
 
-        <footer>
-            <div class="footer_conditions"><!--Condition générales-->
-                <a href="#"><p>Conditions générales de vente</p></a>
-            </div> 
-            
-            <div class="footer_contact"><!--Contact-->
-                <span>Contact</span>
-                <a href="mailto:orinoco@mail.com"><p><i class="fas fa-at"></i> orinoco@mail.com</p></a>
-                <a href="tel:0199989796"><p><i class="fas fa-phone-alt"></i> 01.99.98.97.96</p></a>
-            </div> 
+        <footer class="container-fluid">
+            <div class="footer_components row">
+                <div class="footer_conditions col-sm-4 col-md-3"><!--Condition générales-->
+                    <a href="#"><p>Conditions générales de vente</p></a>
+                </div> 
+                
+                <div class="footer_contact col-sm-4 col-md-3"><!--Contact-->
+                    <span>Contact</span>
+                    <a href="mailto:orinoco@mail.com"><p><i class="fas fa-at"></i> orinoco@mail.com</p></a>
+                    <a href="tel:0199989796"><p><i class="fas fa-phone-alt"></i> 01.99.98.97.96</p></a>
+                </div> 
 
-            <div class="footer_socials"> <!--Reseaux sociaux-->
-                <span>Suivez nous</span>
-                <div class="footer_socials_icons">
-                    <div><!--Insta-->
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div> 
+                <div class="footer_socials col-sm-4 col-md-3 "> <!--Reseaux sociaux-->
+                    <span>Suivez nous</span>
+                    <div class="footer_socials_icons">
+                        <div><!--Insta-->
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div> 
 
-                    <div><!--Fb-->
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <div><!--Fb-->
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+
+                        <div><!--Twitter-->
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div> 
                     </div>
-
-                    <div><!--Twitter-->
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div> 
                 </div>
             </div> 
         </footer>
