@@ -9920,6 +9920,7 @@ body {
 header {
   background-color: #f3e9f1;
   align-items: center;
+  margin-bottom: 30px;
 }
 header .header_logo {
   display: flex;
@@ -9992,14 +9993,16 @@ header .header_cart_text {
 }
 
 footer {
-  display: flex;
   font-size: 13px;
   font-family: "Fira";
   background-color: #131921;
   color: white;
   padding: 20px 30px 10px 50px;
-  align-items: stretch;
-  justify-content: space-between;
+  margin-top: 30px;
+}
+footer .footer_components {
+  display: flex;
+  justify-content: center;
 }
 footer .footer_conditions a {
   text-decoration: none;
@@ -10068,26 +10071,29 @@ footer .fa-twitter:hover {
   color: black;
 }
 .block_product {
-  border-radius: 15px;
+  border-radius: 5px;
   box-shadow: 1px 3px 5px lightgrey;
+  margin-bottom: 30px;
 }
 .block_product_img img {
   width: 100%;
-  height: 50%;
-  border-radius: 15px 15px 0px 0px;
+  height: 200px;
+  border-radius: 5px 5px 0px 0px;
 }
 .block_product_name {
-  margin-left: 20px;
+  padding: 10px;
   font-weight: bold;
 }
 .block_product_price {
-  margin-left: 20px;
+  padding: 10px;
   font-family: Delius;
+  font-size: 20px;
 }
 
 header {
   background-color: #f3e9f1;
   align-items: center;
+  margin-bottom: 30px;
 }
 header .header_logo {
   display: flex;
@@ -10160,14 +10166,16 @@ header .header_cart_text {
 }
 
 footer {
-  display: flex;
   font-size: 13px;
   font-family: "Fira";
   background-color: #131921;
   color: white;
   padding: 20px 30px 10px 50px;
-  align-items: stretch;
-  justify-content: space-between;
+  margin-top: 30px;
+}
+footer .footer_components {
+  display: flex;
+  justify-content: center;
 }
 footer .footer_conditions a {
   text-decoration: none;
@@ -10245,6 +10253,7 @@ footer .fa-twitter:hover {
 header {
   background-color: #f3e9f1;
   align-items: center;
+  margin-bottom: 30px;
 }
 header .header_logo {
   display: flex;
@@ -10317,14 +10326,16 @@ header .header_cart_text {
 }
 
 footer {
-  display: flex;
   font-size: 13px;
   font-family: "Fira";
   background-color: #131921;
   color: white;
   padding: 20px 30px 10px 50px;
-  align-items: stretch;
-  justify-content: space-between;
+  margin-top: 30px;
+}
+footer .footer_components {
+  display: flex;
+  justify-content: center;
 }
 footer .footer_conditions a {
   text-decoration: none;
@@ -10426,14 +10437,16 @@ footer .fa-twitter:hover {
 }
 
 footer {
-  display: flex;
   font-size: 13px;
   font-family: "Fira";
   background-color: #131921;
   color: white;
   padding: 20px 30px 10px 50px;
-  align-items: stretch;
-  justify-content: space-between;
+  margin-top: 30px;
+}
+footer .footer_components {
+  display: flex;
+  justify-content: center;
 }
 footer .footer_conditions a {
   text-decoration: none;

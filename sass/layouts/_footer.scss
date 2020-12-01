@@ -1,13 +1,15 @@
 @mixin footer-style{
-    display: flex;
     font-size: 13px;
     font-family: "Fira";
     background-color: #131921;
     color: white;
     padding: 20px 30px 10px 50px;
-    align-items: stretch;
-    justify-content: space-between;
+    margin-top: 30px;
 
+.footer_components{
+    display: flex;
+    justify-content: center;
+}
 .footer_conditions{
     & a{
     text-decoration: none;
