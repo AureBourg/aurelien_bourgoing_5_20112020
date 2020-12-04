@@ -10436,6 +10436,11 @@ footer .fa-twitter:hover {
   width: 500px;
 }
 
+#cart_number_quantity {
+  height: 30px;
+  width: 50px;
+}
+
 footer {
   font-size: 13px;
   font-family: "Fira";

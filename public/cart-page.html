@@ -63,24 +63,23 @@
                                 </div> 
     
                                 <div class="cart_product_name col"><!--Nom produit-->
-                                    <p>Meuble en chêne</p>
+                                    <p>Nom</p>
                                 </div>
 
                                 <div class="cart_product_color col"><!--Couleur perso produit-->
-                                    <p>Couleur :</p>
+                                    <p>Couleur</p>
                                 </div> 
                                 
                                 <div class="cart_product_price col"><!--Prix produit-->
-                                    <p>79,99 €</p>
+                                    <p>Prix</p>
                                 </div>
-                                <label for="product_quantity">Quantité :</label>
-                                <select name="quantity" id="product_quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
+                                <div class="cart_product_quantity col"><!--Quantité produit-->
+                                    <label for="cart_number_quantity">Quantité</label>
+                                    <input id="cart_number_quantity" type="number" value="1">
+                                </div>
+                                <div> <!--Sous-total-->
+                                    <p>Sous-total (prix * quantité)</p>
+                                </div>
                             </div>
                         <div class="cart_product row"> <!--Produit [i]-->
                             <div class="cart_product_img col"><!--Photo produit-->
@@ -130,13 +129,13 @@
                     </div>
 
                     <div class="main_cart_form_button">
-                        <a href="order-confirmation-page.html"><input type="submit" value="Passer commande"/></a> <!--Bouton passer commande-->
+                        <a href="order-confirmation-page.html"><input id="cart_button" type="submit" value="Passer commande"/></a> <!--Bouton passer commande-->
                     </div>    
                 </div>
             </div>
 
             <div class="total_cart row"> <!--Sous-total-->
-                Sous-total (0 articles) : 
+                Total (0 articles) : (Somme des sous-totaux)
             </div>
         </div>
 
@@ -170,4 +169,7 @@
                 </div>
             </div> 
         </footer>
+
+        <script type="text/javascript" src="../javascript/cart-page.js"></script>
+
     </body>
