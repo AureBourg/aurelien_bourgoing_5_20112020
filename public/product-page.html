@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="style.css">
         <title>Orinoco |</title>
         <script src="https://kit.fontawesome.com/bebc52df70.js" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="../javascript/js.js"></script>
 
     </head>
     <body>
@@ -52,44 +51,8 @@
         </header>
 
         <div class="product_page container-fluid"> <!--Container produit-->
-            <div id="product" class="product row"> <!--Produit -->
+            <div id="selected_product" class="product row"> <!--Produit -->
                 
-                <div class="product_img col-8"><!--Photo produit-->
-                    <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
-                </div> 
-
-                <div class="product_infos col-4"><!--Nom produit-->
-                    <div class="product_infos_name">
-                        <p>Meuble en chêne</p>
-                    </div> 
-                
-                    <div class="product_infos_price"><!--Prix produit-->
-                        <p>79.99€</p>
-                    </div>
-
-                    <div class="product_infos_personalisation"> <!--Personnalisation produit-->
-                        <div class="product_infos_personalisation_title">
-                            <p>Vernis :</p>
-                        </div>
-                        <div>
-                            <input type="radio" name="personalisation" value="Bleu" id="product_infos_personalisation_color_1" checked>
-                            <label for="product_infos_personalisation_color">Bleu</label>
-                          </div>
-                          
-                          <div>
-                            <input type="radio" name="personalisation" value="Rouge" id="product_infos_personalisation_color_2">
-                            <label for="product_infos_personalisation_color_2">Rouge</label>
-                          </div>
-                          
-                          <div>
-                            <input type="radio" name="personalisation" value="Vert" id="product_infos_personalisation_color_3">
-                            <label for="product_infos_personalisation_color_3">Vert</label>
-                          </div>
-                    </div>
-                    <button class="button_add_to_cart"> <!--Bouton ajouter au panier-->
-                        Ajouter au panier
-                    </button>
-                </div>
             </div>
         </div>
 
@@ -123,4 +86,7 @@
                 </div>
             </div> 
         </footer>
+        
+        <script type="text/javascript" src="../javascript/product-page.js"></script>
+
     </body>
