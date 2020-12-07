@@ -39,16 +39,17 @@ request.onreadystatechange = function(){
                     "<label for='product_infos_personalisation_color_3'>"+array.varnish[2]+"</label>"+
                   "</div>"+
             "</div>"+
-            "<button id='cart_button' class='button_add_to_cart' onclick='createItems()'>"+
+            "<button id='cart_button' class='button_add_to_cart'>"+
                 "Ajouter au panier"+
             "</button>"+
-        "</div>";
-
-        function createItems() {
-        localStorage.setItem("cart_item_0", array._id);
-        }  
+        "</div>";  
     }
 }
+
+function buttonClick(){
+    localStorage.setItem("product-to-add", id)
+};
+document.getElementById('cart_button').onclick('click', buttonClick)
 
 request.open("GET","http://localhost:3000/api/furniture/"+id);
 request.send();

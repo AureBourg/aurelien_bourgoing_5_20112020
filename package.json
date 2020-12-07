@@ -18,5 +18,8 @@
   "homepage": "https://github.com/OpenClassrooms-Student-Center/JWDP5#readme",
   "dependencies": {
     "bootstrap": "^4.5.3"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
   }
 }
