@@ -57,43 +57,30 @@
             <div class="main_cart row">
                 <div class="main_cart_products col-sm-8"> <!--Produits enregistrés dans le panier-->
                     <p>Vous n'avez aucun article dans votre panier.</p>
-                            <div class="cart_product row"> <!--Produit [i]-->
-                                <div class="cart_product_img col"><!--Photo produit-->
-                                    <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
-                                </div> 
-    
-                                <div class="cart_product_name col"><!--Nom produit-->
-                                    <p>Nom</p>
-                                </div>
+                    <div class="cart_product row"> <!--Produit [i]-->
+                        <div class="cart_product_img col"><!--Photo produit-->
+                            <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
+                        </div> 
 
-                                <div class="cart_product_color col"><!--Couleur perso produit-->
-                                    <p>Couleur</p>
-                                </div> 
-                                
-                                <div class="cart_product_price col"><!--Prix produit-->
-                                    <p>Prix</p>
-                                </div>
-                                <div class="cart_product_quantity col"><!--Quantité produit-->
-                                    <label for="cart_number_quantity">Quantité</label>
-                                    <input id="cart_number_quantity" type="number" value="1">
-                                </div>
-                                <div> <!--Sous-total-->
-                                    <p>Sous-total (prix * quantité)</p>
-                                </div>
-                            </div>
-                        <div class="cart_product row"> <!--Produit [i]-->
-                            <div class="cart_product_img col"><!--Photo produit-->
-                                <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
-                            </div> 
-
-                            <div class="cart_product_name col"><!--Nom produit-->
-                                <p>Meuble en chêne</p>
-                            </div> 
+                        <div id="cart_product_name" class="cart_product_name col"><!--Nom produit-->
                             
-                            <div class="cart_product_price col"><!--Prix produit-->
-                                <p>79,99 €</p>
-                            </div>
                         </div>
+
+                        <div id="cart_product_varnish" class="cart_product_varnish col"><!--Couleur perso produit-->
+                            
+                        </div> 
+                        
+                        <div id="cart_product_price" class="cart_product_price col"><!--Prix produit-->
+                            
+                        </div>
+                        <div class="cart_product_quantity col"><!--Quantité produit-->
+                            <label for="cart_number_quantity">Quantité</label>
+                            <input id="cart_number_quantity" type="number" value="" min="1">
+                        </div>
+                        <div id="sous-total"> <!--Sous-total-->
+                            
+                        </div>
+                    </div>
                 </div> 
 
                 <div class="main_cart_form col-sm-4"> <!--Formulaire carte bleu-->

@@ -18,7 +18,9 @@ request.onreadystatechange = function(){
                 "</div>"+
             "</a>"+
         "</div>";
-        };
+        }
+        let cartNumber = document.getElementById('header_cart_number');
+        cartNumber.innerHTML = sessionStorage.length -1;
     }
 }
 request.open("GET","http://localhost:3000/api/furniture");

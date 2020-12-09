@@ -7,21 +7,10 @@ let request = new XMLHttpRequest();
 request.onreadystatechange = function(){
     if(this.readyState == XMLHttpRequest.DONE && this.status == 200){
         let array = JSON.parse(this.responseText);
-            document.getElementById('selected_product').innerHTML+= "<div class='product_img col-8'>"+
-            "<img src='"+array.imageUrl+"' alt='"+array._id+"'/>"+
-        "</div>"+
-
-        "<div class='product_infos col-4'>"+
-            "<div class='product_infos_name'>"+
-                array.name+
-            "</div>"+
-        
-            "<div class='product_infos_price'>"+
-                array.price / 1000+ " €"+
-            "</div>"+
-
-            "<div class='product_infos_personalisation'>"+
-                "<div class='product_infos_personalisation_title'>"+
+        document.getElementById('product_image').innerHTML+= "<img src='"+array.imageUrl+"' alt='"+array._id+"'/>"
+        document.getElementById('product_infos_name').innerHTML+= array.name
+        document.getElementById('product_infos_price').innerHTML+= array.price / 1000 + " €"
+        document.getElementById('product_infos_personalisation').innerHTML+= "<div class='product_infos_personalisation_title'>"+
                     "<p>Vernis :</p>"+
                 "</div>"+
                 "<div>"+
@@ -37,20 +26,20 @@ request.onreadystatechange = function(){
                   "<div>"+
                     "<input type='radio' name='personalisation' value='"+array.varnish[2]+"' id='product_infos_personalisation_color_3'>"+
                     "<label for='product_infos_personalisation_color_3'>"+array.varnish[2]+"</label>"+
-                  "</div>"+
-            "</div>"+
-            "<button id='cart_button' class='button_add_to_cart'>"+
-                "Ajouter au panier"+
-            "</button>"+
-        "</div>";  
+                  "</div>"
+        document.getElementById('product_infos_description').innerHTML+= array.description
+
+        let cartButton = document.getElementById('button_add_to_cart');
+        let cartNumber = document.getElementById('header_cart_number');
+
+        cartNumber.innerHTML = sessionStorage.length -1;
+        cartButton.onclick = function(){
+            sessionStorage.setItem(array._id, JSON.stringify(array));
+            cartNumber.innerHTML = sessionStorage.length -1;
+        } 
+        
     }
 }
-
-function buttonClick(){
-    localStorage.setItem("product-to-add", id)
-};
-document.getElementById('cart_button').onclick('click', buttonClick)
-
 request.open("GET","http://localhost:3000/api/furniture/"+id);
 request.send();
 

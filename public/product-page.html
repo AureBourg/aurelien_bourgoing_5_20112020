@@ -38,8 +38,8 @@
                             <i class="fas fa-shopping-cart"></i>
                         </div>
 
-                        <div class="header_cart_number"><!--Nombres articles dans panier-->
-                            0
+                        <div id="header_cart_number"><!--Nombres articles dans panier-->
+                            
                         </div> 
 
                         <div class="header_cart_text d-none d-sm-block"> <!--Texte Panier-->
@@ -51,8 +51,22 @@
         </header>
 
         <div class="product_page container-fluid"> <!--Container produit-->
-            <div id="selected_product" class="product row"> <!--Produit -->
+            <div id="selected_product" class="product row"> 
+                <div id="product_image" class='product_img col-8'></div>
+
+                <div class='product_infos col-4'>
+                    <div id='product_infos_name'></div>
                 
+                    <div id='product_infos_price'></div>
+
+                    <div id='product_infos_personalisation'></div>
+
+                    <div id='product_infos_description'></div>
+                
+                    <button id='button_add_to_cart'>
+                        Ajouter au panier
+                    </button>
+                </div>
             </div>
         </div>
 

@@ -9908,6 +9908,13 @@ h3 {
   font-family: "Delius";
   src: url(../font/Delius/Delius-Regular.ttf);
 }
+#header_cart_number {
+  font-family: Delius;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f5aa42;
+}
+
 html {
   width: 100%;
 }
@@ -10230,24 +10237,33 @@ footer .fa-twitter:hover {
   margin-bottom: 20px;
 }
 .product_img img {
-  width: 800px;
-  height: auto;
+  width: 750px;
+  height: 500px;
 }
-.product_infos_name {
-  font-size: 25px;
-}
-.product_infos_price {
-  font-size: 30px;
-  font-family: Delius;
-}
-.product_infos_personalisation li {
-  list-style: none;
-}
-.product_infos button {
-  border-radius: 20px;
+
+#button_add_to_cart {
+  border-radius: 5px;
   border: none;
   background-color: #f5aa42;
   padding: 10px 20px 10px 20px;
+  width: 100%;
+}
+
+#product_infos_name {
+  font-size: 25px;
+}
+
+#product_infos_price {
+  font-size: 30px;
+  font-family: Delius;
+}
+
+#product_infos_personalisation li {
+  list-style: none;
+}
+
+#product_infos_description {
+  padding: 10px;
 }
 
 header {
