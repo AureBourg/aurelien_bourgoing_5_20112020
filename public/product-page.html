@@ -59,13 +59,33 @@
                 
                     <div id='product_infos_price'></div>
 
-                    <div id='product_infos_personalisation'></div>
+                    <div id='product_infos_personalisation'>
+                        <div>
+                            <label for='varnish-options' class='product_infos_personalisation_options'>Choisissez votre vernis : </label>
+                            <select name='varnish-type' id='varnish-options'>
+                            </select>
+                          </div>
+                    </div>
 
                     <div id='product_infos_description'></div>
                 
-                    <button id='button_add_to_cart'>
+                    <button id='button_add_to_cart' data-id="">
                         Ajouter au panier
                     </button>
+                    <div>
+                        <label for="productQuantity" class="product_infos_quantity">Quantité: </label>
+                        <select name="quantchoice" id="productQuantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,6 +121,7 @@
             </div> 
         </footer>
         
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript" src="../javascript/product-page.js"></script>
 
     </body>
