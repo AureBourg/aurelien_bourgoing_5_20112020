@@ -9908,13 +9908,6 @@ h3 {
   font-family: "Delius";
   src: url(../font/Delius/Delius-Regular.ttf);
 }
-#header_cart_number {
-  font-family: Delius;
-  font-size: 22px;
-  font-weight: bold;
-  color: #f5aa42;
-}
-
 html {
   width: 100%;
 }
@@ -9927,7 +9920,7 @@ body {
 header {
   background-color: #f3e9f1;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 header .header_logo {
   display: flex;
@@ -9997,6 +9990,64 @@ header .header_cart_text {
   font-family: Delius;
   font-size: 16px;
   font-weight: bold;
+}
+header #header_cart_number {
+  font-family: Delius;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f5aa42;
+}
+header #header_cart_message {
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 9999;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 10px;
+}
+@keyframes fondu {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  98% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+}
+header #header_cart_message img {
+  width: 70px;
+  height: 50px;
+  position: absolute;
+  left: 8px;
+  top: 55px;
+}
+header .header_cart_message_title {
+  color: #f5aa42;
+  padding: 5px 20px 5px 20px;
+}
+header .header_cart_message_name {
+  color: black;
+  padding: 5px 5px 5px 80px;
+}
+header .header_cart_message_price {
+  color: black;
+  padding: 5px 5px 5px 80px;
 }
 
 footer {
@@ -10100,7 +10151,7 @@ footer .fa-twitter:hover {
 header {
   background-color: #f3e9f1;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 header .header_logo {
   display: flex;
@@ -10170,6 +10221,64 @@ header .header_cart_text {
   font-family: Delius;
   font-size: 16px;
   font-weight: bold;
+}
+header #header_cart_number {
+  font-family: Delius;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f5aa42;
+}
+header #header_cart_message {
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 9999;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 10px;
+}
+@keyframes fondu {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  98% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+}
+header #header_cart_message img {
+  width: 70px;
+  height: 50px;
+  position: absolute;
+  left: 8px;
+  top: 55px;
+}
+header .header_cart_message_title {
+  color: #f5aa42;
+  padding: 5px 20px 5px 20px;
+}
+header .header_cart_message_name {
+  color: black;
+  padding: 5px 5px 5px 80px;
+}
+header .header_cart_message_price {
+  color: black;
+  padding: 5px 5px 5px 80px;
 }
 
 footer {
@@ -10241,6 +10350,19 @@ footer .fa-twitter:hover {
   height: 500px;
 }
 
+.back_to_menu {
+  padding: 0px 10px 30px 10px;
+}
+.back_to_menu a {
+  display: flex;
+  color: black;
+  text-decoration: none;
+}
+.back_to_menu i {
+  font-size: 20px;
+  padding: 0px 10px 0px 10px;
+}
+
 #button_add_to_cart {
   border-radius: 5px;
   border: none;
@@ -10269,7 +10391,7 @@ footer .fa-twitter:hover {
 header {
   background-color: #f3e9f1;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 header .header_logo {
   display: flex;
@@ -10339,6 +10461,64 @@ header .header_cart_text {
   font-family: Delius;
   font-size: 16px;
   font-weight: bold;
+}
+header #header_cart_number {
+  font-family: Delius;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f5aa42;
+}
+header #header_cart_message {
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 9999;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 10px;
+}
+@keyframes fondu {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  98% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+}
+header #header_cart_message img {
+  width: 70px;
+  height: 50px;
+  position: absolute;
+  left: 8px;
+  top: 55px;
+}
+header .header_cart_message_title {
+  color: #f5aa42;
+  padding: 5px 20px 5px 20px;
+}
+header .header_cart_message_name {
+  color: black;
+  padding: 5px 5px 5px 80px;
+}
+header .header_cart_message_price {
+  color: black;
+  padding: 5px 5px 5px 80px;
 }
 
 footer {

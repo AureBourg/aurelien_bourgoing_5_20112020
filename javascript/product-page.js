@@ -99,7 +99,7 @@ $.get("http://localhost:3000/api/furniture/"+id)
 
     document.getElementById('product_image').innerHTML+= "<img src='"+selectedProduct.imageUrl+"' alt='"+selectedProduct._id+"'/>";
     document.getElementById('product_infos_name').innerHTML+= selectedProduct.name;
-    document.getElementById('product_infos_price').innerHTML+= selectedProduct.price / 1000 + " €";
+    document.getElementById('product_infos_price').innerHTML+= selectedProduct.price / 1000 +"0"+ " €";
     document.getElementById('product_infos_description').innerHTML+= selectedProduct.description;
 
     // création du menu déroulant pour la selection des options du produit
@@ -145,9 +145,15 @@ cartButton.onclick = function() { //Fonction au clic sur le bouton 'Ajouter au p
         cartNumber.innerHTML = userCart.length; //On met à jour le chiffre du panier
         console.log(userCart);
 
-        //Mettre une fonction ici qui fait apparaitre la div cachée avec le message "Le produit à été ajouté au panier"
-        //OU creer un message avec une anim d'apparition en CSS et la declencher au clic
-
+        //Fonction qui fait apparaitre la div cachée avec le message "Le produit à été ajouté au panier"
+        let messageCart = document.getElementById('header_cart_message');
+        messageCart.innerHTML=""+
+        "<div class='header_cart_message_title'>Produit ajouté au panier !</div>"+
+        "<div class='header_cart_message_name'>"+selectedProduct.name+" x "+selectedProductQty+"</div>"+ 
+        "<div class='header_cart_message_price'>"+selectedProduct.price * selectedProductQty / 1000 +"0"+ " €"+"</div>"+
+        "<img src='"+selectedProduct.imageUrl+"' alt='"+selectedProduct._id+"'/>";
+        messageCart.style.visibility='visible';
+        messageCart.style.animation='fondu 3000ms 0ms forwards';
         
     })
     .fail(function(error){

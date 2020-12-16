@@ -27,6 +27,20 @@ request.onreadystatechange = function(){
 request.open("GET","http://localhost:3000/api/furniture");
 request.send();*/
 
+// Verifier si le panier est déja présent dans le storage
+if (localStorage.getItem("userCart")) {
+
+} else {
+  //Création du array de produits dans le storage
+  let cartInit = [];
+  localStorage.setItem("userCart", JSON.stringify(cartInit));
+};
+let userCart = JSON.parse(localStorage.getItem("userCart"));
+
+//Afficher le chiffre du panier selon le nombre d'items dedans
+let cartNumber = document.getElementById('header_cart_number');
+cartNumber.innerHTML = userCart.length; 
+
 // Requete API et boucle pour afficher la liste des produits
 $.get("http://localhost:3000/api/furniture/")
     .done(function(products){
@@ -42,12 +56,12 @@ $.get("http://localhost:3000/api/furniture/")
                             products[i].name+
                         "</div>"+
                         "<div class='block_product_price'>"+
-                            products[i].price / 1000 +" €"+
+                            products[i].price / 1000 +"0"+" €"+
                         "</div>"+
                     "</div>"+
                 "</a>"+
             "</div>";
-        }
+        }    
     })
     .fail(function(error){
         alert("Connexion au serveur impossible.");
