@@ -27,22 +27,22 @@ request.onreadystatechange = function(){
 request.open("GET","http://localhost:3000/api/furniture");
 request.send();*/
 
-// Requete API
+// Requete API et boucle pour afficher la liste des produits
 $.get("http://localhost:3000/api/furniture/")
-    .done(function(datas){
-        for(let i=0; i<datas.length; i++){
+    .done(function(products){
+        for(let i=0; i<products.length; i++){
             document.getElementById('products').innerHTML+= ""+
-            "<div class='col-10 col-md-4' id="+datas[i]._id+">"+
-                "<a href='product-page.html?id="+datas[i]._id+"'>"+
+            "<div class='col-10 col-md-4' id="+products[i]._id+">"+
+                "<a href='product-page.html?id="+products[i]._id+"'>"+
                     "<div id='product' class='block_product'>"+
                         "<div class='block_product_img'>"+
-                            "<img src='"+datas[i].imageUrl+"' alt='"+datas[i]._id+"'/>"+
+                            "<img src='"+products[i].imageUrl+"' alt='"+products[i]._id+"'/>"+
                         "</div>"+
                         "<div class='block_product_name'>"+
-                            datas[i].name+
+                            products[i].name+
                         "</div>"+
                         "<div class='block_product_price'>"+
-                            datas[i].price / 1000 +" €"+
+                            products[i].price / 1000 +" €"+
                         "</div>"+
                     "</div>"+
                 "</a>"+
@@ -50,5 +50,5 @@ $.get("http://localhost:3000/api/furniture/")
         }
     })
     .fail(function(error){
-        alert("Connexion au serveur impossible. Réessayez plus tard");
+        alert("Connexion au serveur impossible.");
     });

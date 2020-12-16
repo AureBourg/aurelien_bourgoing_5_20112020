@@ -75,22 +75,25 @@ cartButton.onclick = function(cartProducts) {
 request.open("GET","http://localhost:3000/api/furniture/"+id);
 request.send();*/
 
-// verification de l'existence d'un panier utilisateur dans le local.storage sinon création d'un nouveau panier
+// Verifier si le panier est déja présent dans le storage
 if (localStorage.getItem("userCart")) {
-  console.log("Panier utilisateur existant dans le local storage");
+
 } else {
-  console.log("Création d'un panier utilisateur dans le local storage");
-  //Création du tableau de produits dans le storage
+  //Création du array de produits dans le storage
   let cartInit = [];
   localStorage.setItem("userCart", JSON.stringify(cartInit));
 };
 let userCart = JSON.parse(localStorage.getItem("userCart"));
 
-//Creation d'une condition pour attribuer une valeur à la variable "id"
+//Creation de la variable id
 const urlParam = new URLSearchParams(window.location.search);
 const id = urlParam.get("id");
 
-//Requete API avec le param "id" pour afficher les éléments de l'item selectionné
+//Afficher le chiffre du panier selon le nombre d'items dedans
+let cartNumber = document.getElementById('header_cart_number');
+cartNumber.innerHTML = userCart.length; 
+
+//Requete API avec la variable "id" pour afficher les éléments de l'item selectionné
 $.get("http://localhost:3000/api/furniture/"+id)
   .done(function(selectedProduct){
 
@@ -100,17 +103,57 @@ $.get("http://localhost:3000/api/furniture/"+id)
     document.getElementById('product_infos_description').innerHTML+= selectedProduct.description;
 
     // création du menu déroulant pour la selection des options du produit
-    let varnishOptions = selectedProduct.varnish;
-    /*for(i=0, i<varnishOptions.length, i++){
-      let varnishChoice = document.getElementById("varnish-options");
-      varnishChoice.innerHTML += "<option>"+varnish+"</option>";
-    };*/
-})
+    let varnishOption = selectedProduct.varnish;
+    varnishOption.forEach((varnish) => {
+      let varnishChoice = document.createElement('option')
+      varnishChoice.setAttribute
+      document.getElementById("varnish-options").appendChild(varnishChoice).innerHTML = varnish;
+    });
+  })
   .fail(function(error){
     alert("Oups, une erreur s'est produite ! La page que vous recherchez n'existe pas");
   });
 
+//Fonction ajouter le produit au panier de l'utilisateur
+let cartButton = document.getElementById('button_add_to_cart');  
+cartButton.onclick = function() { //Fonction au clic sur le bouton 'Ajouter au panier'
+    $.get("http://localhost:3000/api/furniture/"+id)
+    .done(function(selectedProduct){ //Récupérer les infos du produit choisis par l'utilisateur
+        let selectedProductId = selectedProduct._id;
+        let selectedProductQty = parseInt(document.getElementById('productQuantity').options[document.getElementById('productQuantity').selectedIndex].value);
+        let selectedProductVarnish = document.getElementById('varnish-options').options[document.getElementById('varnish-options').selectedIndex].text;
+        
+        //Verifier si le produit avec le varnish est dans le array
+        let objetVise = userCart.filter(function(objet){
+          return objet.selectedProductId == selectedProductId && objet.selectedProductVarnish == selectedProductVarnish
+        });        
+        
+        //Si le produit n'est pas dans le array, on le met
+        if (objetVise.length == 0){
+          userCart.push({
+              selectedProductId,
+              selectedProductQty,
+              selectedProductVarnish
+            });
+          cartNumber.innerHTML = userCart.length; //Et on met le chiffre du panier à jour
+        }
+        else{ //Sinon, on ajoute la quantité voulue à la quantité du produit dans le array
+          objetVise[0].selectedProductQty = objetVise[0].selectedProductQty + selectedProductQty;
+        }
+            
+        localStorage.setItem('userCart', JSON.stringify(userCart)); //On place le array dans le storage
+        cartNumber.innerHTML = userCart.length; //On met à jour le chiffre du panier
+        console.log(userCart);
 
+        //Mettre une fonction ici qui fait apparaitre la div cachée avec le message "Le produit à été ajouté au panier"
+        //OU creer un message avec une anim d'apparition en CSS et la declencher au clic
+
+        
+    })
+    .fail(function(error){
+      alert("Oups, une erreur s'est produite ! Nous n'avons pas pu ajouter ce produit au panier");
+    });
+};
 
 
   
