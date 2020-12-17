@@ -39,7 +39,7 @@ let userCart = JSON.parse(localStorage.getItem("userCart"));
 
 //Afficher le chiffre du panier selon le nombre d'items dedans
 let cartNumber = document.getElementById('header_cart_number');
-cartNumber.innerHTML = userCart.length; 
+cartNumber.innerHTML = userCart.length;
 
 // Requete API et boucle pour afficher la liste des produits
 $.get("http://localhost:3000/api/furniture/")

@@ -1,80 +1,3 @@
-/*const url = window.location.search;
-const urlParam = new URLSearchParams(url);
-const id = urlParam.get("id");
-
-let request = new XMLHttpRequest();
-request.onreadystatechange = function(){
-    if(this.readyState == XMLHttpRequest.DONE && this.status == 200){
-        let array = JSON.parse(this.responseText);
-        document.getElementById('product_image').innerHTML+= "<img src='"+array.imageUrl+"' alt='"+array._id+"'/>";
-        document.getElementById('product_infos_name').innerHTML+= array.name;
-        document.getElementById('product_infos_price').innerHTML+= array.price / 1000 + " €";
-        document.getElementById('product_infos_personalisation').innerHTML+= "<div class='product_infos_personalisation_title'>"+
-                    "<p>Vernis :</p>"+
-                "</div>"+
-                "<div>"+
-                    "<input type='radio' name='personalisation' value='"+array.varnish[0]+"' id='product_infos_personalisation_color_1' checked>"+
-                    "<label for='product_infos_personalisation_color'>"+array.varnish[0]+"</label>"+
-                  "</div>"+
-                  
-                  "<div>"+
-                    "<input type='radio' name='personalisation' value='"+array.varnish[1]+"' id='product_infos_personalisation_color_2'>"+
-                    "<label for='product_infos_personalisation_color_2'>"+array.varnish[1]+"</label>"+
-                  "</div>"+
-                  
-                  "<div>"+
-                    "<input type='radio' name='personalisation' value='"+array.varnish[2]+"' id='product_infos_personalisation_color_3'>"+
-                    "<label for='product_infos_personalisation_color_3'>"+array.varnish[2]+"</label>"+
-                  "</div>";
-                  //boucle varnish
-        document.getElementById('product_infos_description').innerHTML+= array.description;
-
-        let cartButton = document.getElementById('button_add_to_cart');
-        //let cartNumber = document.getElementById('header_cart_number');
-
-        cartButton.setAttribute('data-id', array._id)
-
-        /*cartNumber.innerHTML = sessionStorage.length -1;
-        cartButton.onclick = function(){
-            sessionStorage.setItem(array._id, JSON.stringify(array));
-            cartNumber.innerHTML = sessionStorage.length -1;
-        } */
-
-        /*cartProducts = [];
-        sessionStorage.setItem('panier', cartProducts)
-        console.log(cartProducts);
-
-        cartButton.onclick = function(){
-          let productToAdd = {
-            "id": cartButton.getAttribute('data-id'),
-            "quantity" : 1
-          };
-          let newCartProducts = cartProducts.push(productToAdd);
-          sessionStorage.setItem('panier', newCartProducts);       
-        };*/
-
-/*let cartProductsDepart = [];
-let productToAdd = {
-  "id": cartButton.getAttribute('data-id'),
-  "quantity" : 1
-};
-
-
-sessionStorage.setItem('panier', JSON.stringify(cartProductsDepart));
-cartButton.onclick = function(cartProducts) {
-    sessionStorage.getItem('panier');
-    cartProductsDepart.push(productToAdd);
-    cartProducts.textContent = cartProductsDepart;
-    sessionStorage.setItem('panier', JSON.stringify(cartProducts));
-    console.log(JSON.parse(sessionStorage.getItem('panier')));
-}
-
-      
-};
-}
-request.open("GET","http://localhost:3000/api/furniture/"+id);
-request.send();*/
-
 // Verifier si le panier est déja présent dans le storage
 if (localStorage.getItem("userCart")) {
 
@@ -114,6 +37,9 @@ $.get("http://localhost:3000/api/furniture/"+id)
     alert("Oups, une erreur s'est produite ! La page que vous recherchez n'existe pas");
   });
 
+//On cache le message "Le produit à été ajouté au panier"
+$('#header_cart_message').hide();
+
 //Fonction ajouter le produit au panier de l'utilisateur
 let cartButton = document.getElementById('button_add_to_cart');  
 cartButton.onclick = function() { //Fonction au clic sur le bouton 'Ajouter au panier'
@@ -126,7 +52,7 @@ cartButton.onclick = function() { //Fonction au clic sur le bouton 'Ajouter au p
         //Verifier si le produit avec le varnish est dans le array
         let objetVise = userCart.filter(function(objet){
           return objet.selectedProductId == selectedProductId && objet.selectedProductVarnish == selectedProductVarnish
-        });        
+        });      
         
         //Si le produit n'est pas dans le array, on le met
         if (objetVise.length == 0){
@@ -143,7 +69,6 @@ cartButton.onclick = function() { //Fonction au clic sur le bouton 'Ajouter au p
             
         localStorage.setItem('userCart', JSON.stringify(userCart)); //On place le array dans le storage
         cartNumber.innerHTML = userCart.length; //On met à jour le chiffre du panier
-        console.log(userCart);
 
         //Fonction qui fait apparaitre la div cachée avec le message "Le produit à été ajouté au panier"
         let messageCart = document.getElementById('header_cart_message');
@@ -152,12 +77,11 @@ cartButton.onclick = function() { //Fonction au clic sur le bouton 'Ajouter au p
         "<div class='header_cart_message_name'>"+selectedProduct.name+" x "+selectedProductQty+"</div>"+ 
         "<div class='header_cart_message_price'>"+selectedProduct.price * selectedProductQty / 1000 +"0"+ " €"+"</div>"+
         "<img src='"+selectedProduct.imageUrl+"' alt='"+selectedProduct._id+"'/>";
-        messageCart.style.visibility='visible';
-        messageCart.style.animation='fondu 3000ms 0ms forwards';
-        
+        $('#header_cart_message').fadeIn(300).delay(2000).fadeOut(150, 'linear');
     })
     .fail(function(error){
       alert("Oups, une erreur s'est produite ! Nous n'avons pas pu ajouter ce produit au panier");
+      //function errorRedirection(){document.location.href="error-page.html"} //Redirection vers page d'erreur
     });
 };
 
