@@ -37,9 +37,9 @@
                             <i class="fas fa-shopping-cart"></i>
                         </div>
 
-                        <div class="header_cart_number"><!--Nombres articles dans panier-->
-                            0
-                        </div> 
+                        <div id="header_cart_number"><!--Nombres articles dans panier-->
+                            
+                        </div>
 
                         <div class="header_cart_text d-none d-sm-block"> <!--Texte Panier-->
                             Panier
@@ -50,37 +50,16 @@
         </header>
 
         <div class="cart_page container-fluid">
+            <div class="back_to_menu row">
+                <a href="index.html"><i class="fas fa-arrow-left"></i>Retour au menu</a>
+            </div>
             <div class="your_cart row">
                 <p>Votre panier</p>
             </div>
 
             <div class="main_cart row">
-                <div class="main_cart_products col-sm-8"> <!--Produits enregistrés dans le panier-->
-                    <p>Vous n'avez aucun article dans votre panier.</p>
-                    <div id='cart_product' class="cart_product row"> <!--Produit [i]-->
-                        <!--<div class="cart_product_img col">
-                            <img src="../backend/images/oak_2.jpg" alt="Meuble 2"/>
-                        </div> 
+                <div id='main_cart_products' class="main_cart_products col-sm-8">
 
-                        <div id="cart_product_name" class="cart_product_name col">
-                            
-                        </div>
-
-                        <div id="cart_product_varnish" class="cart_product_varnish col">
-                            
-                        </div> 
-                        
-                        <div id="cart_product_price" class="cart_product_price col">
-                            
-                        </div>
-                        <div class="cart_product_quantity col">
-                            <label for="cart_number_quantity">Quantité</label>
-                            <input id="cart_number_quantity" type="number" value="1" min="1">
-                        </div>
-                        <div id="sous-total"> 
-                            
-                        </div>-->
-                    </div>
                 </div> 
 
                 <div class="main_cart_form col-sm-4"> <!--Formulaire carte bleu-->
@@ -121,8 +100,8 @@
                 </div>
             </div>
 
-            <div class="total_cart row"> <!--Sous-total-->
-                Total (0 articles) : (Somme des sous-totaux)
+            <div id="total_cart" class="total_cart row"> <!--Sous-total-->
+                Total (0 article)
             </div>
         </div>
 
@@ -157,6 +136,7 @@
             </div> 
         </footer>
 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript" src="../javascript/cart-page.js"></script>
 
     </body>

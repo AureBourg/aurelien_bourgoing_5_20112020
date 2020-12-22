@@ -1,42 +1,53 @@
-let storageArray =[];
-//let quantity = document.getElementById('cart_number_quantity').value;
+//On récupère le tableau dans le storage
+const cartToDisplay = JSON.parse(localStorage.getItem('userCart'));
 
+//Afficher le chiffre du panier selon le nombre d'items dedans
+let cartNumber = document.getElementById('header_cart_number');
+cartNumber.innerHTML = cartToDisplay.length;
 
-for (var i = 0; i < sessionStorage.length; i++) {
-    //let storageArray = [sessionStorage.getItem(sessionStorage.key(i))];
-    storageArray.push(JSON.parse(sessionStorage.getItem(sessionStorage.key(i))));
-    };
-//console.log(storageArray);
-
-for (let i=0; i<storageArray.length; i++){
-    //document.getElementById('cart_product_name').innerHTML += storageArray[i].name;
-    //document.getElementById('cart_product_varnish').innerHTML += storageArray[i].varnish[0];
-    //document.getElementById('cart_product_price').innerHTML += storageArray[i].price / 1000;
-    //document.getElementById('sous-total').innerHTML += (storageArray[i].price / 1000) *quantity;
-
-    document.getElementById('cart_product').innerHTML+= ""+
-                    "<div class='row'>"+
-                        "<div class='cart_product_img col'>"+
-                            "<img src='"+storageArray[i].imageUrl+"' alt='Meuble 2'/>"+
-                        "</div>"+
-
-                        "<div id='cart_product_name' class='cart_product_name col'>"+
-                            storageArray[i].name +
-                        "</div>"+
-
-                        "<div id='cart_product_varnish' class='cart_product_varnish col'>"+
-                            //storageArray[i].varnish[1] +
-                        "</div>"+
-                        
-                        "<div id='cart_product_price' class='cart_product_price col'>"+
-                            storageArray[i].price / 1000 +
-                        "</div>"+
-                        "<div class='cart_product_quantity col'>"+
-                            "<label for='cart_number_quantity'>Quantité</label>"+
-                            "<input id='cart_number_quantity' type='number' value='1' min='1'>"+
-                        "</div>"+
-                        "<div id='sous-total'>"+
-                            //(storageArray[i].price / 1000) *quantity
-                        "</div>"+
-                    "</div>";
+//Texte si le panier est vide
+if(cartToDisplay.length==0){
+    document.getElementById('main_cart_products').innerHTML+= "Votre panier est vide.";
+}else{
+    $.get("http://localhost:3000/api/furniture/")
+        .done(function(productsLocalHost){
+            let total = 0;
+            for(let objet of productsLocalHost){//On récupère les infos de chaque item du panier
+                for(let cartObjet of cartToDisplay){
+                    if(cartObjet.selectedProductId==objet._id){
+                        document.getElementById('main_cart_products').innerHTML+= ""+
+                        "<div class='col-12' id="+cartObjet.selectedProductId+">"+
+                            "<div class='block_product col-12'>"+
+                                "<div class='block_product_price'>"+
+                                    objet.imageUrl+
+                                "</div>"+
+                                "<div class='block_product_name'>"+
+                                    objet.name+
+                                "</div>"+
+                                "<div class='block_product_price'>"+
+                                    objet.price / 1000 +"0 €"+
+                                "</div>"+
+                                "<div class='block_product_varnish'>"+
+                                    cartObjet.selectedProductVarnish+
+                                "</div>"+
+                                "<div class='block_product_quantity'>"+
+                                    cartObjet.selectedProductQty+
+                                "</div>"+
+                                "<div id='product_subtotal' class='block_product_subtotal'>"+
+                                    (objet.price / 1000)*cartObjet.selectedProductQty+"0 €"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>";
+                        //Calcul prix total
+                        total = total + (objet.price / 1000)*cartObjet.selectedProductQty;
+                        if(cartToDisplay.length>1){
+                        document.getElementById('total_cart').innerHTML="Total ("+cartToDisplay.length+" articles) : "+total+"0 €";
+                        }else{document.getElementById('total_cart').innerHTML="Total ("+cartToDisplay.length+" article) : "+total+"0 €"};
+                    }
+                }
+            }
+        })
+        .fail(function(error){
+            alert("Connexion au serveur impossible.");
+        });
 };
