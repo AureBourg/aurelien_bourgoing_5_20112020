@@ -22,7 +22,7 @@ $.get("http://localhost:3000/api/furniture/"+id)
 
     document.getElementById('product_image').innerHTML+= "<img src='"+selectedProduct.imageUrl+"' alt='"+selectedProduct._id+"'/>";
     document.getElementById('product_infos_name').innerHTML+= selectedProduct.name;
-    document.getElementById('product_infos_price').innerHTML+= selectedProduct.price / 1000 +"0"+ " €";
+    document.getElementById('product_infos_price').innerHTML+= selectedProduct.price / 100 +" €";
     document.getElementById('product_infos_description').innerHTML+= selectedProduct.description;
 
     // création du menu déroulant pour la selection des options du produit

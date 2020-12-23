@@ -27,7 +27,7 @@ $.get("http://localhost:3000/api/furniture/")
                             products[i].name+
                         "</div>"+
                         "<div class='block_list_product_price'>"+
-                            products[i].price / 1000 +"0"+" €"+
+                            products[i].price / 100 +" €"+
                         "</div>"+
                     "</div>"+
                 "</a>"+
