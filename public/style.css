@@ -10542,7 +10542,7 @@ footer .fa-twitter:hover {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 460px;
+  height: 520px;
   background-color: #f9f3fa;
   border-radius: 15px;
   padding: 40px;
@@ -10551,6 +10551,12 @@ footer .fa-twitter:hover {
 .main_cart_form_user {
   width: 220px;
 }
+.main_cart_form_user_information {
+  margin-bottom: 30px;
+}
+.main_cart_form_user_information span {
+  color: #f5aa42;
+}
 .main_cart_form_user_infos {
   display: flex;
   flex-direction: column;
@@ -10558,6 +10564,18 @@ footer .fa-twitter:hover {
   align-items: flex-start;
 }
 .main_cart_form_user_infos input {
+  width: 100%;
+}
+.main_cart_form_user_location span {
+  color: #f5aa42;
+}
+.main_cart_form_user_locas {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  align-items: flex-start;
+}
+.main_cart_form_user_locas input {
   width: 100%;
 }
 .main_cart_form_button input {

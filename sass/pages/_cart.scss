@@ -21,14 +21,35 @@ footer{
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        height: 460px;
+        height: 520px;
         background-color: rgb(249, 243, 250);
         border-radius: 15px;
         padding: 40px;
         font-size: 14px;
         &_user{
             width: 220px;
+            &_information{
+                & span{
+                    color: #f5aa42;
+
+                }
+                margin-bottom: 30px;
+            }
             &_infos{
+                display: flex;
+                flex-direction: column;
+                padding: 5px;
+                align-items: flex-start;
+                & input{
+                    width: 100%;
+                }
+            }
+            &_location{
+                & span{
+                    color: #f5aa42;
+                }
+            }
+            &_locas{
                 display: flex;
                 flex-direction: column;
                 padding: 5px;

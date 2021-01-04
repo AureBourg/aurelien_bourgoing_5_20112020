@@ -51,7 +51,7 @@
 
         <div class="cart_page container-fluid">
             <div class="back_to_menu row">
-                <a href="index.html"><i class="fas fa-arrow-left"></i>Retour au menu</a>
+                <a href="index.html"><i class="fas fa-arrow-left"></i>Continuer mes achats</a>
             </div>
             <div class="your_cart row">
                 <p>Votre panier</p>
@@ -64,37 +64,43 @@
                     </div>
                 </div> 
 
-                <div class="main_cart_form col-sm-4"> <!--Formulaire carte bleu-->
-                    <div class="main_cart_form_user">  
-                        <div id="user_lastname" class="main_cart_form_user_infos">
-                            Nom
-                            <input/>
+                <form id="main_cart_form" class="main_cart_form col-sm-4"> <!--Formulaire carte bleu-->
+                    <div class="main_cart_form_user">
+                        <div class="main_cart_form_user_information">
+                            <span>Vos coordonnées :</span>
+                            <div  class="main_cart_form_user_infos">
+                                Nom
+                                <input id="user_lastname" type="text" pattern="[A-Za-z]{1,}" required/>
+                            </div>
+                            <div class="main_cart_form_user_infos">
+                                Prénom
+                                <input id="user_firstname" type="text" pattern="[A-Za-z]{1,}" required/>
+                            </div>
+                            <div class="main_cart_form_user_infos">
+                                Adresse mail
+                                <input id="user_mail" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+                            </div>
                         </div>
-                        <div id="user_firstname" class="main_cart_form_user_infos">
-                            Prénom
-                            <input/>
-                        </div>
-                        <div  id="user_adress"class="main_cart_form_user_infos">
-                            Adresse
-                            <input/>
-                        </div>
-                        <div id="user_city" class="main_cart_form_user_infos">
-                            Ville
-                            <input/>
-                        </div>
-                        <div id="user_mail" class="main_cart_form_user_infos">
-                            Adresse mail
-                            <input/>
+                        <div class="main_cart_form_user_location">
+                            <span>Votre adresse de livraison :</span>
+                            <div  class="main_cart_form_user_locas">
+                                Adresse
+                                <input id="user_address" type="text" pattern="[A-Za-z0-9\s]{1,}" required/>
+                            </div>
+                            <div class="main_cart_form_user_locas">
+                                Code postal
+                                <input id="user_city" type="text" pattern="[0-9\s]{5,}" required/>
+                            </div>
                         </div>
                     </div>
-                    <div class="main_cart_form_button">
-                        <a href="order-confirmation-page.html"><input id="cart_button" type="submit" value="Passer commande"/></a> <!--Bouton passer commande-->
+                    <div id="main_cart_form_button" class="main_cart_form_button">
+                        <a ghref="order-confirmation-page.html"><input id="cart_button" type="submit" value="Passer commande"/></a> <!--Bouton passer commande-->
                     </div>    
-                </div>
+                </form>
             </div>
 
-            <div id="total_cart" class="total_cart row"> <!--Sous-total-->
-                Total (0 article)
+            <div id="total_cart" class="total_cart row"> <!--Prix total-->
+                
             </div>
         </div>
 

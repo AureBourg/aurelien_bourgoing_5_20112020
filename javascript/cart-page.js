@@ -8,6 +8,7 @@ cartNumber.innerHTML = storageArray.length;
 //Texte si le panier est vide
 if(storageArray.length==0){
     document.getElementById('main_cart_products').innerHTML= "Votre panier est vide.";
+    $('#total_cart').hide();
 }else{
     for(let i=0; i<storageArray.length; i++){
         $.get("http://localhost:3000/api/furniture/"+storageArray[i].selectedProductId)
@@ -38,12 +39,17 @@ if(storageArray.length==0){
                             "</div>"+
                             "<div id='totaldelete_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ", "_")+"' class='block_product_total col-3'>"+
                                 "<div id='subtotal_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")+"' class='block_product_subtotal'>"+
-                                ((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €"+
                                 "</div>"+
                             "</div>"+
                      "</div>";
 
-            
+
+            //Sous-total de chaque produit
+            let subtotal = document.createElement('div');
+            subtotal.innerHTML = ((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €";
+            document.getElementById("subtotal_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")).appendChild(subtotal);
+
+
             //Bouton supprimer article
             let btnDelete = document.createElement('button');
             btnDelete.innerHTML = "<i class='fas fa-trash-alt'></i>";
@@ -66,7 +72,7 @@ if(storageArray.length==0){
                     storageArray[i].selectedProductQty--;
                     document.getElementById('qtynumber_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=storageArray[i].selectedProductQty;
                     document.getElementById('subtotal_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €";
-                    console.log(storageArray);
+                    document.getElementById('total_cart').innerHTML="Total : "+sumtotal('.block_product_subtotal')+" €";
                     localStorage.setItem('userCart', JSON.stringify(storageArray));
                 }
             }
@@ -81,40 +87,63 @@ if(storageArray.length==0){
                     storageArray[i].selectedProductQty++;
                     document.getElementById('qtynumber_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=storageArray[i].selectedProductQty;
                     document.getElementById('subtotal_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €";
-                    console.log(storageArray);
+                    document.getElementById('total_cart').innerHTML="Total : "+sumtotal('.block_product_subtotal')+" €";
                     localStorage.setItem('userCart', JSON.stringify(storageArray));
                 }
             }
 
+            //Fonction pour afficher le prix total du panier
+            sumtotal = function(selector) {
+                var sum = 0;
+                $(selector).each(function() {
+                    sum += parseInt($(this).text());
+                });
+                return sum;
+            }
+            document.getElementById('total_cart').innerHTML="Total : "+sumtotal('.block_product_subtotal')+" €";
         
-        })
+        })//Fin .done
         .fail(function(){
             alert("Connexion au serveur impossible.");
         });
-    }//Fin boucle
+    }//Fin boucle for
 
     
-      //Calcul prix total
-        let totalQty = 0;
-        let totalPrice = 0;
-        for(let i=0;i<storageArray.length;i++){
-            totalQty += storageArray[i].selectedProductQty;
-            let productQty = (storageArray[i].selectedProductQty);
-            $.get("http://localhost:3000/api/furniture/"+storageArray[i].selectedProductId)
-            .done(function(localHostArray){
-                let subtotal = ((localHostArray.price / 100)*productQty)
-                totalPrice += subtotal;
-                if(totalQty<2){
-                    document.getElementById('total_cart').innerHTML="Total ("+totalQty+" article) : "+totalPrice+" €";
-                }else{
-                    document.getElementById('total_cart').innerHTML="Total ("+totalQty+" articles) : "+totalPrice+" €";               
-                }
-            })
-        }
-        
+}; //Fin else
 
 
-        /*somme des class .block_product_subtotal
-        somme des class .block_product_quantity_number*/
+// Récupération du panier et des données de contact utilisateur pour l'envoi de la commande
+let cartToSend = JSON.parse(localStorage.getItem("userCart"));
+let checkForm = document.getElementById('main_cart_form');
+const clickToSend = document.getElementById('main_cart_form_button');
 
-} //Fin else
+clickToSend.onclick = function() {
+
+    let lastName = document.getElementById('user_lastname').value;
+    let firstName = document.getElementById('user_firstname').value;
+    let email = document.getElementById('user_mail').value;
+    let address = document.getElementById('user_address').value;
+    let city = document.getElementById('user_city').value;
+
+    // création de l'objet contact
+    let contact = {
+        lastName,
+        firstName,
+        email,
+        address,
+        city
+    };
+
+    // création du tableau product
+    const products = [];
+    cartToSend.forEach(item => {
+        products.push(item.selectedProductId)
+    });
+
+    console.log(cartToSend);
+    console.log(contact);
+    console.log(products);
+
+}
+
+
