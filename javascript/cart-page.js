@@ -143,7 +143,7 @@ clickToSend.onclick = function(event){
     }
 
     //Requête Fetch POST
-    const request = new Request(("http://localhost:3000/api/furniture/" + "order"), {
+    const request = new Request(("http://localhost:3000/api/furniture/order"), {
         method: 'POST',
         body: JSON.stringify({
             contact,
@@ -160,16 +160,16 @@ clickToSend.onclick = function(event){
         fetch(request)
             .then(response => response.json())
             .then(response => {
-
+                console.log(response);
                 let getOrderId = response.orderId;
                 let getTotalPrice = document.getElementById('total_cart').textContent;
-
-                localStorage.clear();
 
                 let validOrder = {
                     getOrderId,
                     getTotalPrice
                 };
+                
+                localStorage.clear();
 
                 sessionStorage.setItem("confirmOrder", JSON.stringify(validOrder));
                 sessionStorage.setItem("userEmail", JSON.stringify(email));
