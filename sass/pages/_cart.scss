@@ -61,20 +61,20 @@ footer{
         }
         &_button{
             & input{
-            background-color: #f5aa42;
-            border-radius: 30px;
-            border: none;
-            box-shadow: 1px 2px 5px lightgray;
-            font-family: Fira;
-            font-size: 16px;
-            margin-top: 20px;
-            padding: 20px 25px 20px 25px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            &:hover{
-                background: linear-gradient(to top, #f5aa42, #f57e42);
-            }
+                background-color: #f5aa42;
+                border-radius: 30px;
+                border: none;
+                box-shadow: 1px 2px 5px lightgray;
+                font-family: Fira;
+                font-size: 16px;
+                margin-top: 20px;
+                padding: 20px 25px 20px 25px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                    &:hover{
+                        background: linear-gradient(to top, #f5aa42, #f57e42);
+                    }
             }
             & a{
                 text-decoration: none;

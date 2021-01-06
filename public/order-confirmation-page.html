@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="header_cart_number"><!--Nombres articles dans panier-->
-                            0
+                            
                         </div> 
 
                         <div class="header_cart_text d-none d-sm-block"> <!--Texte Panier-->
@@ -57,17 +57,17 @@
             </div>
 
             <div class="confirmation_thanks row">
-                <p>Merci .. pour votre commande, <br/>Au plaisir de vous revoir !</p>
+                <p>Merci <span id="userName"></span> pour votre commande, <br/>Au plaisir de vous revoir !</p>
             </div>
 
             <div class="confirmation_order row">
                 <div class="confirmation_order_number col-3">
                     <p>Numéro de commande</p>
-                    <p>651561511651</p>
+                    <div id="orderId"></div>
                 </div>
                 <div class="confirmation_order_price col-3">
                     <p>Prix total</p>
-                    <p>79.99€</p>
+                    <div id="totalPrice"></div>
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
             </div>
 
             <div class="confirmation_email row">
-                <p>Un email de confirmation a été envoyé à ... <br/> Des questions ? Contactez nous au 01 99 98 97 96.</p>
+                <p>Un email de confirmation a été envoyé à <span id="userEmail"></span> <br/> Des questions ? Contactez nous au 01 99 98 97 96.</p>
             </div>
         </div>
 
@@ -110,4 +110,8 @@
                 </div>
             </div> 
         </footer>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../javascript/confirmation-page.js"></script>
+
     </body>

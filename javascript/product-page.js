@@ -75,7 +75,7 @@ cartButton.onclick = function() { //Fonction au clic sur le bouton 'Ajouter au p
         messageCart.innerHTML=""+
         "<div class='header_cart_message_title'>Produit ajouté au panier !</div>"+
         "<div class='header_cart_message_name'>"+selectedProduct.name+" x "+selectedProductQty+"</div>"+ 
-        "<div class='header_cart_message_price'>"+selectedProduct.price * selectedProductQty / 1000 +"0"+ " €"+"</div>"+
+        "<div class='header_cart_message_price'>"+selectedProduct.price * selectedProductQty / 100 + " €"+"</div>"+
         "<img src='"+selectedProduct.imageUrl+"' alt='"+selectedProduct._id+"'/>";
         $('#header_cart_message').fadeIn(300).delay(2000).fadeOut(150, 'linear');
     })

@@ -112,12 +112,14 @@ if(storageArray.length==0){
 }; //Fin else
 
 
-// Récupération du panier et des données de contact utilisateur pour l'envoi de la commande
-let cartToSend = JSON.parse(localStorage.getItem("userCart"));
+
 let checkForm = document.getElementById('main_cart_form');
 const clickToSend = document.getElementById('main_cart_form_button');
 
-clickToSend.onclick = function() {
+//Requête POST pour envoyer les données du formulaire au clic du bouton
+clickToSend.onclick = function(event){
+
+    event.preventDefault();
 
     let lastName = document.getElementById('user_lastname').value;
     let firstName = document.getElementById('user_firstname').value;
@@ -125,7 +127,7 @@ clickToSend.onclick = function() {
     let address = document.getElementById('user_address').value;
     let city = document.getElementById('user_city').value;
 
-    // création de l'objet contact
+    // Création de l'objet contact
     let contact = {
         lastName,
         firstName,
@@ -134,16 +136,54 @@ clickToSend.onclick = function() {
         city
     };
 
-    // création du tableau product
+    // Création du tableau product
     const products = [];
-    cartToSend.forEach(item => {
-        products.push(item.selectedProductId)
+    for (let i=0; i<storageArray.length; i++){
+        products.push(storageArray[i].selectedProductId)
+    }
+
+    //Requête Fetch POST
+    const request = new Request(("http://localhost:3000/api/furniture/" + "order"), {
+        method: 'POST',
+        body: JSON.stringify({
+            contact,
+            products
+        }),
+        headers: new Headers({
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        })
     });
 
-    console.log(cartToSend);
-    console.log(contact);
-    console.log(products);
+    //Vérification du bon remplissage du formulaire
+    if (checkForm.checkValidity() === true) {
+        fetch(request)
+            .then(response => response.json())
+            .then(response => {
 
-}
+                let getOrderId = response.orderId;
+                let getTotalPrice = document.getElementById('total_cart').textContent;
+
+                localStorage.clear();
+
+                let validOrder = {
+                    getOrderId,
+                    getTotalPrice
+                };
+
+                sessionStorage.setItem("confirmOrder", JSON.stringify(validOrder));
+                sessionStorage.setItem("userEmail", JSON.stringify(email));
+                sessionStorage.setItem("userName", JSON.stringify(firstName));
+               
+                window.location = 'order-confirmation-page.html';
+                
+            })
+
+    // Alerte si le formulaire n'est pas bien rempli        
+    } else if (checkForm.checkValidity() === false) {
+        alert("Veuillez vérifier l'exactitude des informations que vous avez fourni");
+    }
+
+}; //Fin fonction onclick
 
 
