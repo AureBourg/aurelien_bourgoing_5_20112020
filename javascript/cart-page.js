@@ -4,6 +4,9 @@ const storageArray = JSON.parse(localStorage.getItem('userCart'));
 //Afficher le chiffre du panier selon le nombre d'items dedans
 let cartNumber = document.getElementById('header_cart_number');
 cartNumber.innerHTML = storageArray.length;
+if (storageArray.length>9){
+    cartNumber.style.fontSize = "16px";
+}
 
 //Texte si le panier est vide
 if(storageArray.length==0){
@@ -181,7 +184,7 @@ clickToSend.onclick = function(event){
 
     // Alerte si le formulaire n'est pas bien rempli        
     } else if (checkForm.checkValidity() === false) {
-        alert("Veuillez vérifier l'exactitude des informations que vous avez fourni");
+        alert("Veuillez vérifier l'exactitude des informations que vous avez renseignez");
     }
 
 }; //Fin fonction onclick

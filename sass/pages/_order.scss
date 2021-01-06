@@ -5,15 +5,36 @@ footer{
 .confirmation{
     &_icons{
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        font-size: 50px;
+        align-items: center;
+        font-size: 30px;
         margin-bottom: 30px;
         margin-top: 20px;
+        & .fa-check{
+            font-size: 40px;
+            color: #85c75b;
+            margin-bottom: 20px;
+        }
+        & .fa-shopping-bag{
+            display: inline-block;
+            background: linear-gradient(to top left,#8F5BFE 20%,#B36F98 50%,#E68A08 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        & img{
+            width: 300px;
+            height: auto;
+        }
     }
     &_thanks{
         display: flex;
+        text-align: center;
         justify-content: center;
         margin-bottom: 30px;
+        & span{
+            font-weight: bold;
+        }
     }
     &_order{
         display: flex;
@@ -23,22 +44,47 @@ footer{
             display: flex;
             flex-direction: column;
             align-items: center;
+            & span{
+                font-weight: bold;
+            }
         }
         &_price{
             display: flex;
             flex-direction: column;
             align-items: center;
             border-left: gray solid 1px;
-        }
+            & span{
+                font-weight: bold;
+                font-size: 25px;
+            }
+        }       
     }
     &_email{
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
+        text-align: center;
+        & span{
+            font-weight: bold;
+        }
     }
     &_button{
         display: flex;
         justify-content: center;
-        margin-bottom: 30px;
+        align-items: center;
+        & button{
+            background-color: #f5aa42;
+            border-radius: 30px;
+            border: none;
+            box-shadow: 1px 2px 5px lightgray;
+            font-family: Fira;
+            font-size: 16px;
+            margin-bottom: 30px;
+            padding: 20px 40px 20px 40px;
+            cursor: pointer;
+                &:hover{
+                    background: linear-gradient(to top, #f5aa42, #f57e42);
+                }
+        }
     }
 }

@@ -11,6 +11,9 @@ let userCart = JSON.parse(localStorage.getItem("userCart"));
 //Afficher le chiffre du panier selon le nombre d'items dedans
 let cartNumber = document.getElementById('header_cart_number');
 cartNumber.innerHTML = userCart.length;
+if (userCart.length>9){
+    cartNumber.style.fontSize = "16px";
+}
 
 // Requete API et boucle pour afficher la liste des produits
 $.get("http://localhost:3000/api/furniture/")

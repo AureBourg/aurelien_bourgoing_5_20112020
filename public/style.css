@@ -9978,12 +9978,7 @@ header .header_cart a {
 header .header_cart_icon i {
   font-size: 30px;
   color: #131921;
-}
-header .header_cart_number {
-  font-family: Delius;
-  font-size: 22px;
-  font-weight: bold;
-  color: #f5aa42;
+  margin-right: 20px;
 }
 header .header_cart_text {
   color: #131921;
@@ -9991,11 +9986,25 @@ header .header_cart_text {
   font-size: 16px;
   font-weight: bold;
 }
+header .trapezoid {
+  border-top: 12px solid #f3e9f1;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  height: 10px;
+  width: 22px;
+  position: relative;
+  left: 31px;
+  bottom: 7px;
+}
 header #header_cart_number {
   font-family: Delius;
   font-size: 22px;
   font-weight: bold;
   color: #f5aa42;
+  position: relative;
+  left: 48px;
+  bottom: 14px;
+  z-index: 9999;
 }
 header #header_cart_message {
   position: absolute;
@@ -10187,12 +10196,7 @@ header .header_cart a {
 header .header_cart_icon i {
   font-size: 30px;
   color: #131921;
-}
-header .header_cart_number {
-  font-family: Delius;
-  font-size: 22px;
-  font-weight: bold;
-  color: #f5aa42;
+  margin-right: 20px;
 }
 header .header_cart_text {
   color: #131921;
@@ -10200,11 +10204,25 @@ header .header_cart_text {
   font-size: 16px;
   font-weight: bold;
 }
+header .trapezoid {
+  border-top: 12px solid #f3e9f1;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  height: 10px;
+  width: 22px;
+  position: relative;
+  left: 31px;
+  bottom: 7px;
+}
 header #header_cart_number {
   font-family: Delius;
   font-size: 22px;
   font-weight: bold;
   color: #f5aa42;
+  position: relative;
+  left: 48px;
+  bottom: 14px;
+  z-index: 9999;
 }
 header #header_cart_message {
   position: absolute;
@@ -10416,12 +10434,7 @@ header .header_cart a {
 header .header_cart_icon i {
   font-size: 30px;
   color: #131921;
-}
-header .header_cart_number {
-  font-family: Delius;
-  font-size: 22px;
-  font-weight: bold;
-  color: #f5aa42;
+  margin-right: 20px;
 }
 header .header_cart_text {
   color: #131921;
@@ -10429,11 +10442,25 @@ header .header_cart_text {
   font-size: 16px;
   font-weight: bold;
 }
+header .trapezoid {
+  border-top: 12px solid #f3e9f1;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  height: 10px;
+  width: 22px;
+  position: relative;
+  left: 31px;
+  bottom: 7px;
+}
 header #header_cart_number {
   font-family: Delius;
   font-size: 22px;
   font-weight: bold;
   color: #f5aa42;
+  position: relative;
+  left: 48px;
+  bottom: 14px;
+  z-index: 9999;
 }
 header #header_cart_message {
   position: absolute;
@@ -10650,12 +10677,21 @@ footer .fa-twitter:hover {
   border-bottom: grey 2px solid;
   padding: 0px 15px 0px 15px;
 }
+.block_product_quantity button {
+  background: #f3e9f1;
+}
 .block_product_total {
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 17px;
   align-items: center;
   justify-content: space-evenly;
+}
+.block_product_total button {
+  background: #f3e9f1;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px lightgray;
+  padding: 5px 15px 5px 15px;
 }
 .block_product_delete {
   justify-content: center;
@@ -10733,15 +10769,36 @@ footer .fa-twitter:hover {
 
 .confirmation_icons {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: 50px;
+  align-items: center;
+  font-size: 30px;
   margin-bottom: 30px;
   margin-top: 20px;
 }
+.confirmation_icons .fa-check {
+  font-size: 40px;
+  color: #85c75b;
+  margin-bottom: 20px;
+}
+.confirmation_icons .fa-shopping-bag {
+  display: inline-block;
+  background: linear-gradient(to top left, #8F5BFE 20%, #B36F98 50%, #E68A08 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.confirmation_icons img {
+  width: 300px;
+  height: auto;
+}
 .confirmation_thanks {
   display: flex;
+  text-align: center;
   justify-content: center;
   margin-bottom: 30px;
+}
+.confirmation_thanks span {
+  font-weight: bold;
 }
 .confirmation_order {
   display: flex;
@@ -10753,21 +10810,46 @@ footer .fa-twitter:hover {
   flex-direction: column;
   align-items: center;
 }
+.confirmation_order_number span {
+  font-weight: bold;
+}
 .confirmation_order_price {
   display: flex;
   flex-direction: column;
   align-items: center;
   border-left: gray solid 1px;
 }
+.confirmation_order_price span {
+  font-weight: bold;
+  font-size: 25px;
+}
 .confirmation_email {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+  text-align: center;
+}
+.confirmation_email span {
+  font-weight: bold;
 }
 .confirmation_button {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.confirmation_button button {
+  background-color: #f5aa42;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 1px 2px 5px lightgray;
+  font-family: Fira;
+  font-size: 16px;
   margin-bottom: 30px;
+  padding: 20px 40px 20px 40px;
+  cursor: pointer;
+}
+.confirmation_button button:hover {
+  background: linear-gradient(to top, #f5aa42, #f57e42);
 }
 
 /*# sourceMappingURL=style.css.map */

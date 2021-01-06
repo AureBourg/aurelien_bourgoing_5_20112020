@@ -60,13 +60,8 @@
         & i{
         font-size: 30px;
         color: #131921;
+        margin-right: 20px;
         }
-    }
-    &_number{
-        font-family: Delius;
-        font-size: 22px;
-        font-weight: bold;
-        color: #f5aa42;
     }
     &_text{
         color: #131921;
@@ -76,12 +71,26 @@
     }
     
 }
-
+.trapezoid{
+	border-top: 12px solid rgb(243, 233, 241);
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	height: 10px;
+    width: 22px;
+    position: relative;
+    left: 31px;
+    bottom: 7px;
+    
+}
 #header_cart_number{
     font-family: Delius;
     font-size: 22px;
     font-weight: bold;
     color: #f5aa42;
+    position: relative;
+    left: 48px;
+    bottom: 14px;
+    z-index: 9999;
 }
 #header_cart_message{
     position: absolute;

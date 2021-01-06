@@ -15,6 +15,9 @@ const id = urlParam.get("id");
 //Afficher le chiffre du panier selon le nombre d'items dedans
 let cartNumber = document.getElementById('header_cart_number');
 cartNumber.innerHTML = userCart.length; 
+if (userCart.length>9){
+  cartNumber.style.fontSize = "16px";
+}
 
 //Requete API avec la variable "id" pour afficher les éléments de l'item selectionné
 $.get("http://localhost:3000/api/furniture/"+id)
