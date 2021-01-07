@@ -9966,7 +9966,7 @@ header .header_input_loupe {
 }
 header .header_cart {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
 }
 header .header_cart a {
@@ -10184,7 +10184,7 @@ header .header_input_loupe {
 }
 header .header_cart {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
 }
 header .header_cart a {
@@ -10422,7 +10422,7 @@ header .header_input_loupe {
 }
 header .header_cart {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
 }
 header .header_cart a {

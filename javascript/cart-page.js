@@ -184,7 +184,7 @@ clickToSend.onclick = function(event){
 
     // Alerte si le formulaire n'est pas bien rempli        
     } else if (checkForm.checkValidity() === false) {
-        alert("Veuillez vérifier l'exactitude des informations que vous avez renseignez");
+        alert("Veuillez vérifier l'exactitude des informations que vous avez renseigné");
     }
 
 }; //Fin fonction onclick
