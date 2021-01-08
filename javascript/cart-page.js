@@ -20,11 +20,11 @@ if(storageArray.length==0){
             let cartProduct = document.createElement('div');
             document.getElementById('products').appendChild(cartProduct);
             cartProduct.innerHTML = ""+
-                        "<div id="+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")+" class='block_product col-12'>"+
-                            "<div class='block_product_img col-5'>"+
+                        "<div id="+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")+" class='block_product row'>"+
+                            "<div class='block_product_img col-md-5'>"+
                                 "<img src="+localHostArray.imageUrl+" alt="+storageArray[i].selectedProductId+"/>"+
                             "</div>"+
-                            "<div class='block_product_infos col-4'>"+
+                            "<div class='block_product_infos col-md-4'>"+
                                 "<div class='block_product_name'>"+
                                     localHostArray.name+
                                 "</div>"+
@@ -40,7 +40,7 @@ if(storageArray.length==0){
                                     "</div>"+
                                 "</div>"+
                             "</div>"+
-                            "<div id='totaldelete_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ", "_")+"' class='block_product_total col-3'>"+
+                            "<div id='totaldelete_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ", "_")+"' class='block_product_total col-md-3'>"+
                                 "<div id='subtotal_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")+"' class='block_product_subtotal'>"+
                                 "</div>"+
                             "</div>"+

@@ -8,6 +8,7 @@
         <script src="https://kit.fontawesome.com/bebc52df70.js" crossorigin="anonymous"></script>
 
     </head>
+    
     <body>
         <header class="container-fluid">
             <div class="header_components row">
@@ -17,23 +18,23 @@
                     </a>
                 </div> 
 
-                <div class="header_input col"> <!--Barre recherche-->
+                <div class="header_input col col-xl-6"> <!--Barre recherche-->
                     <div class="header_input_category d-none d-sm-block"> <!--Categorie menu defilant-->
                         Catégories <!--Menu deroulant-->
                         <i class="fas fa-sort-down"></i>
                     </div>
 
                     <div class="header_input_search d-none d-sm-block"> <!--Barre recehrche-->
-                        <input>
+                        <input value="Meuble">
                     </div>
 
                     <div class="header_input_loupe"> <!--Logo loupe-->
                         <i class="fas fa-search"></i>
                     </div> 
                 </div> 
-
-                <div class="header_cart col-3"> <!--Panier-->
-                    <div id="header_cart_message"></div>
+                <div id="header_cart_message"></div>
+                <div class="header_cart col-2 col-sm-3"> <!--Panier-->
+                    
                     <a href="cart-page.html"> <!--Lien vers page panier-->
                         <div id="header_cart_number"><!--Nombres articles dans panier-->    
                         </div>
@@ -57,9 +58,9 @@
                 <a href="index.html"><i class="fas fa-arrow-left"></i>Retour au menu</a>
             </div>
             <div id="selected_product" class="product row"> 
-                <div id="product_image" class='product_img col-8'></div>
+                <div id="product_image" class='product_img col-12 col-md-8'></div>
 
-                <div class='product_infos col-4'>
+                <div class='product_infos col-12 col-md-4'>
                     <div id='product_infos_name'></div>
                 
                     <div id='product_infos_price'></div>

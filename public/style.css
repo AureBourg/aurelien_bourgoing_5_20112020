@@ -9922,6 +9922,10 @@ header {
   align-items: center;
   margin-bottom: 10px;
 }
+header .header_components {
+  margin-right: -15px;
+  margin-left: -15px;
+}
 header .header_logo {
   display: flex;
   justify-content: left;
@@ -10047,6 +10051,8 @@ footer {
 footer .footer_components {
   display: flex;
   justify-content: center;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 footer .footer_conditions a {
   text-decoration: none;
@@ -10140,6 +10146,10 @@ header {
   align-items: center;
   margin-bottom: 10px;
 }
+header .header_components {
+  margin-right: -15px;
+  margin-left: -15px;
+}
 header .header_logo {
   display: flex;
   justify-content: left;
@@ -10265,6 +10275,8 @@ footer {
 footer .footer_components {
   display: flex;
   justify-content: center;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 footer .footer_conditions a {
   text-decoration: none;
@@ -10319,8 +10331,8 @@ footer .fa-twitter:hover {
   margin-bottom: 20px;
 }
 .product_img img {
-  width: 750px;
-  height: 500px;
+  width: 100%;
+  height: auto;
 }
 
 .back_to_menu {
@@ -10378,6 +10390,10 @@ header {
   align-items: center;
   margin-bottom: 10px;
 }
+header .header_components {
+  margin-right: -15px;
+  margin-left: -15px;
+}
 header .header_logo {
   display: flex;
   justify-content: left;
@@ -10503,6 +10519,8 @@ footer {
 footer .footer_components {
   display: flex;
   justify-content: center;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 footer .footer_conditions a {
   text-decoration: none;
@@ -10641,7 +10659,7 @@ footer .fa-twitter:hover {
   background: #f7cb8d;
   border-radius: 10px;
   padding: 8px 15px 8px 15px;
-  width: 350px;
+  margin-top: 15px;
 }
 
 #cart_number_quantity {
@@ -10686,12 +10704,15 @@ footer .fa-twitter:hover {
   font-size: 17px;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 15px;
 }
 .block_product_total button {
   background: #f3e9f1;
   border-radius: 10px;
   box-shadow: 1px 2px 5px lightgray;
   padding: 5px 15px 5px 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .block_product_delete {
   justify-content: center;
@@ -10718,6 +10739,8 @@ footer {
 footer .footer_components {
   display: flex;
   justify-content: center;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 footer .footer_conditions a {
   text-decoration: none;

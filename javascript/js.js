@@ -20,7 +20,7 @@ $.get("http://localhost:3000/api/furniture/")
     .done(function(products){
         for(let i=0; i<products.length; i++){
             document.getElementById('products').innerHTML+= ""+
-            "<div class='col-10 col-md-4' id="+products[i]._id+">"+
+            "<div class='col-12 col-sm-6 col-md-4 col-xl-3' id="+products[i]._id+">"+
                 "<a href='product-page.html?id="+products[i]._id+"'>"+
                     "<div id='product' class='block_list_product'>"+
                         "<div class='block_list_product_img'>"+
