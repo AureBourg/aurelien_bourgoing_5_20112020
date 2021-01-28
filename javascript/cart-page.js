@@ -49,16 +49,19 @@ if(storageArray.length==0){
                                 "</div>"+
                             "</div>"+
                      "</div>";
+                     
+            //On appelle notre classe d'objets
+            let classPanier = new Panier(i, localHostArray);
 
             //Fonctions pour gérer la quantité des articles dans notre panier
-            classPanier.enleverUnArticle(i);
+            classPanier.enleverUnArticle();
 
-            classPanier.retirerUneQuantite(i, localHostArray);
+            classPanier.retirerUneQuantite();
 
-            classPanier.ajouterUneQuantite(i, localHostArray);
+            classPanier.ajouterUneQuantite();
 
             //Fonction pour afficher les sous-totaux du panier
-            classPanier.sousTotal(i, localHostArray);
+            classPanier.sousTotal();
 
             //Fonction pour afficher le prix total du panier  
             sumtotal = function(selector){    
