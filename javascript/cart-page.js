@@ -1,22 +1,26 @@
+//On appelle notre classe d'objets
+let classPanier = new Panier();
+
 //On récupère le tableau dans le storage
 const storageArray = JSON.parse(localStorage.getItem('userCart'));
 
 //Afficher le chiffre du panier selon le nombre d'items dedans
-let cartNumber = document.getElementById('header_cart_number');
-cartNumber.innerHTML = storageArray.length;
-if (storageArray.length>9){
-    cartNumber.style.fontSize = "16px";
-}
+classPanier.updateCartNumber("storageArray");
 
 //Texte si le panier est vide
 if(storageArray.length==0){
     document.getElementById('main_cart_products').innerHTML= "Votre panier est vide.";
-    $('#total_cart').hide();
+    document.getElementById('total_cart').style.display = 'none';
 }else{
     for(let i=0; i<storageArray.length; i++){
-        $.get("http://localhost:3000/api/furniture/"+storageArray[i].selectedProductId)
-        .done(function(localHostArray){
+        //Requête GET pour afficher les items du panier
+        var request = new Request("http://localhost:3000/api/furniture/"+storageArray[i].selectedProductId, {
+            method: "GET",
+        })
 
+        fetch(request)
+        .then(response => response.json())
+        .then(response = function(localHostArray) {
             let cartProduct = document.createElement('div');
             document.getElementById('products').appendChild(cartProduct);
             cartProduct.innerHTML = ""+
@@ -46,72 +50,32 @@ if(storageArray.length==0){
                             "</div>"+
                      "</div>";
 
+            //Fonctions pour gérer la quantité des articles dans notre panier
+            classPanier.enleverUnArticle(i);
 
-            //Sous-total de chaque produit
-            let subtotal = document.createElement('div');
-            subtotal.innerHTML = ((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €";
-            document.getElementById("subtotal_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")).appendChild(subtotal);
+            classPanier.retirerUneQuantite(i, localHostArray);
 
+            classPanier.ajouterUneQuantite(i, localHostArray);
 
-            //Bouton supprimer article
-            let btnDelete = document.createElement('button');
-            btnDelete.innerHTML = "<i class='fas fa-trash-alt'></i>";
-            document.getElementById("totaldelete_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")).appendChild(btnDelete);
-            // Fonction pour supprimer un objet du panier
-            btnDelete.onclick=function(){
-                storageArray.splice(i, 1);
-                localStorage.setItem('userCart', JSON.stringify(storageArray));
-                window.location.reload();
-            }
+            //Fonction pour afficher les sous-totaux du panier
+            classPanier.sousTotal(i, localHostArray);
 
-
-            //Bouton quantité -
-            let btnMinus = document.createElement('button');
-            btnMinus.innerHTML = "<i class='fas fa-minus'></i>";
-            document.getElementById("qtyminusplus_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")).prepend(btnMinus);
-            //Fonction pour diminuer la quantité de l'article
-            btnMinus.onclick=function(){
-                if(storageArray[i].selectedProductQty>1){
-                    storageArray[i].selectedProductQty--;
-                    document.getElementById('qtynumber_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=storageArray[i].selectedProductQty;
-                    document.getElementById('subtotal_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €";
-                    document.getElementById('total_cart').innerHTML="Total : "+sumtotal('.block_product_subtotal')+" €";
-                    localStorage.setItem('userCart', JSON.stringify(storageArray));
-                }
-            }
-
-            //Bouton quantité +
-            let btnPlus = document.createElement('button');
-            btnPlus.innerHTML = "<i class='fas fa-plus'></i>";
-            document.getElementById("qtyminusplus_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")).appendChild(btnPlus);
-            //Fonction pour augmenter la quantité de l'article
-            btnPlus.onclick=function(){
-                if(storageArray[i].selectedProductQty<9){
-                    storageArray[i].selectedProductQty++;
-                    document.getElementById('qtynumber_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=storageArray[i].selectedProductQty;
-                    document.getElementById('subtotal_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €";
-                    document.getElementById('total_cart').innerHTML="Total : "+sumtotal('.block_product_subtotal')+" €";
-                    localStorage.setItem('userCart', JSON.stringify(storageArray));
-                }
-            }
-
-            //Fonction pour afficher le prix total du panier
-            sumtotal = function(selector) {
+            //Fonction pour afficher le prix total du panier  
+            sumtotal = function(selector){    
                 var sum = 0;
-                $(selector).each(function() {
-                    sum += parseInt($(this).text());
-                });
+                var selectors = document.getElementsByClassName(selector);
+                for(let i=0; i<selectors.length; i++){
+                    sum += parseInt(selectors[i].textContent);
+                }
                 return sum;
-            }
-            document.getElementById('total_cart').innerHTML="Total : "+sumtotal('.block_product_subtotal')+" €";
-        
-        })//Fin .done
-        .fail(function(){
-            alert("Connexion au serveur impossible.");
-        });
+            }            
+            
+            document.getElementById('total_cart').innerHTML="Total : "+sumtotal('block_product_subtotal')+" €";
+        })
+        .catch(err => alert("Connexion au serveur impossible.", err)); // Message d'erreur
+
     }//Fin boucle for
 
-    
 }; //Fin else
 
 
@@ -163,7 +127,7 @@ clickToSend.onclick = function(event){
         fetch(request)
             .then(response => response.json())
             .then(response => {
-                console.log(response);
+                
                 let getOrderId = response.orderId;
                 let getTotalPrice = document.getElementById('total_cart').textContent;
 

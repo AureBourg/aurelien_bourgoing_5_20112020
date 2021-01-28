@@ -16,8 +16,13 @@ if (userCart.length>9){
 }
 
 // Requete API et boucle pour afficher la liste des produits
-$.get("http://localhost:3000/api/furniture/")
-    .done(function(products){
+var request = new Request("http://localhost:3000/api/furniture/", {
+  method: "GET",
+})
+
+fetch(request)
+.then(response => response.json())
+.then(response = function(products) {
         for(let i=0; i<products.length; i++){
             document.getElementById('products').innerHTML+= ""+
             "<div class='col-12 col-sm-6 col-md-4 col-xl-3' id="+products[i]._id+">"+
@@ -35,8 +40,6 @@ $.get("http://localhost:3000/api/furniture/")
                     "</div>"+
                 "</a>"+
             "</div>";
-        }    
-    })
-    .fail(function(error){
-        alert("Connexion au serveur impossible.");
-    });
+        }
+})
+.catch(err => alert("Connexion au serveur impossible.", err)); // Message d'erreur

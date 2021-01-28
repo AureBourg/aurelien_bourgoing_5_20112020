@@ -1,98 +1,70 @@
 class Panier {
-	
-	ajouterUnArticle() {
-		if (localStorage.getItem("userCart")) {
 
-		} else {
-		  let cartInit = [];
-		  localStorage.setItem("userCart", JSON.stringify(cartInit));
-		};
-		let userCart = JSON.parse(localStorage.getItem("userCart"));
+	enleverUnArticle(i){
 
-		cartButton.onclick = function() {
-		    $.get("URL"+id)
-		    .done(function(oneProduct){
-		        let objetVise = userCart.filter(function(objet){
-		          return objet.oneProduct.id == oneProduct.id
-		        });      
-
-		        if (objetVise.length == 0){
-		            userCart.push(
-                        {
-                        oneProductId,
-                        oneProductQty
-                        }
-                    );
-		        }
-		        else{
-		          objetVise[0].oneProduct.qty = objetVise[0].oneProduct.qty + oneProduct.qty;
-                }
-                
-                localStorage.setItem('userCart', JSON.stringify(userCart));
-            })                  
-        }
-	}
-
-	enleverUnArticle(){
-		let btnDelete = document.createElement('button');
+		//Bouton supprimer article
+        let btnDelete = document.createElement('button');
         btnDelete.innerHTML = "<i class='fas fa-trash-alt'></i>";
-        document.getElementById("divparent").appendChild(btnDelete);
-        
-        btnDelete.onclick = function(){
-	        storageArray.splice(i, 1);
-	        localStorage.setItem('userCart', JSON.stringify(storageArray));
-	        window.location.reload();
+        document.getElementById("totaldelete_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")).appendChild(btnDelete);
+        // Fonction pour supprimer un objet du panier
+        btnDelete.onclick=function(){
+            storageArray.splice(i, 1);
+            localStorage.setItem('userCart', JSON.stringify(storageArray));
+            window.location.reload();
         }
 	}
 
-	ajouterUneQuantite(){
+	ajouterUneQuantite(i, localHostArray){
 
-	    let btnPlus = document.createElement('button');
-	    btnPlus.innerHTML = "<i class='fas fa-plus'></i>";
-	    document.getElementById("divparent").appendChild(btnPlus);
-        
-        btnPlus.onclick = function(){
-            if(storageArray[i].Qty<9){
-                storageArray[i].selectedProduct.qty++;
-                document.getElementById('divQtyNumber').innerHTML=storageArray[i].Qty;
-                document.getElementById('divSubtotal').innerHTML=((localHostArray.price/100)*storageArray[i].Qty)+" €";
-                document.getElementById('divTotalprice').innerHTML="Total : "+sumtotal+" €";
+	    //Bouton quantité +
+        let btnPlus = document.createElement('button');
+        btnPlus.innerHTML = "<i class='fas fa-plus'></i>";
+        document.getElementById("qtyminusplus_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")).appendChild(btnPlus);
+        //Fonction pour augmenter la quantité de l'article
+        btnPlus.onclick=function(){
+            if(storageArray[i].selectedProductQty<9){
+                storageArray[i].selectedProductQty++;
+                document.getElementById('qtynumber_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=storageArray[i].selectedProductQty;
+                document.getElementById('subtotal_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €";
+                document.getElementById('total_cart').innerHTML="Total : "+sumtotal('block_product_subtotal')+" €";
                 localStorage.setItem('userCart', JSON.stringify(storageArray));
             }
         }
 	}
 
-	retirerUneQuantite(){
-		let btnMinuc = document.createElement('button');
-	    btnMinus.innerHTML = "<i class='fas fa-minus'></i>";
-	    document.getElementById("divparent").appendChild(btnMinus);
-        
-        btnPlus.onclick = function(){
-            if(storageArray[i].Qty>1){
+	retirerUneQuantite(i, localHostArray){
+
+		//Bouton quantité -
+        let btnMinus = document.createElement('button');
+        btnMinus.innerHTML = "<i class='fas fa-minus'></i>";
+        document.getElementById("qtyminusplus_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")).prepend(btnMinus);
+        //Fonction pour diminuer la quantité de l'article
+        btnMinus.onclick=function(){
+            if(storageArray[i].selectedProductQty>1){
                 storageArray[i].selectedProductQty--;
-                document.getElementById('divQtyNumber').innerHTML=storageArray[i].Qty;
-                document.getElementById('divSubtotal').innerHTML=((localHostArray.price/100)*storageArray[i].Qty)+" €";
-                document.getElementById('divTotalprice').innerHTML="Total : "+sumtotal+" €";
+                document.getElementById('qtynumber_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=storageArray[i].selectedProductQty;
+                document.getElementById('subtotal_'+storageArray[i].selectedProductId+'_'+storageArray[i].selectedProductVarnish.replace(" ","_")).innerHTML=((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €";
+                document.getElementById('total_cart').innerHTML="Total : "+sumtotal('block_product_subtotal')+" €";
                 localStorage.setItem('userCart', JSON.stringify(storageArray));
             }
         }
 	}
 
-	sousTotal(){
+	sousTotal(i, localHostArray){
+
+        //Sous-total de chaque produit
         let subtotal = document.createElement('div');
-        subtotal.innerHTML = ((localHostArray.price/100)*storageArray[i].Qty)+" €";
-        document.getElementById("divparent").appendChild(subtotal);
+        subtotal.innerHTML = ((localHostArray.price / 100)*storageArray[i].selectedProductQty)+" €";
+        document.getElementById("subtotal_"+storageArray[i].selectedProductId+"_"+storageArray[i].selectedProductVarnish.replace(" ","_")).appendChild(subtotal);
 
 	}
+    
+    updateCartNumber(){
 
-	prixTotal(){		
-        sumtotal = function(selector) {
-            var sum = 0;
-            $(selector).each(function() {
-                sum += parseInt($(this).text());
-            });
-            return sum;
+        let cartNumber = document.getElementById('header_cart_number');
+        cartNumber.innerHTML = storageArray.length;
+        if (storageArray.length>9){
+            cartNumber.style.fontSize = "16px";
         }
-        document.getElementById('divTotalprice').innerHTML="Total : "+sumtotal+" €";
-	}
+    }
 }
