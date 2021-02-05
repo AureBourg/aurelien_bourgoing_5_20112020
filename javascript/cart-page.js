@@ -86,6 +86,36 @@ if(storageArray.length==0){
 let checkForm = document.getElementById('main_cart_form');
 const clickToSend = document.getElementById('main_cart_form_button');
 
+
+
+//Regex a envoyé pour chaque champs
+let userLastname = document.getElementById('user_lastname');
+let userFirstname = document.getElementById('user_firstname');
+let userMail = document.getElementById('user_mail');
+let userAddress = document.getElementById('user_address');
+let userCity = document.getElementById('user_city');
+
+
+userLastname.setAttribute('pattern','[a-zA-ZÀ-ÿ]{1,}');
+userLastname.required = true;
+
+userFirstname.setAttribute('pattern','[a-zA-ZÀ-ÿ]{1,}');
+userFirstname.required = true;
+
+userMail.setAttribute('pattern','[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$');
+userMail.required = true;
+
+userAddress.setAttribute('pattern','[a-zA-ZÀ-ÿ0-9]{1,}');
+userAddress.required = true;
+
+userCity.setAttribute('pattern','[0-9]{5,}');
+userCity.setAttribute('maxlength','5');
+userCity.required = true;
+
+
+
+
+
 //Requête POST pour envoyer les données du formulaire au clic du bouton
 clickToSend.onclick = function(event){
 
